@@ -194,9 +194,12 @@ Route::get(
     // }
     'App\Http\Controllers\RencanaPelayananController@index'
 );
-Route::get('/tablelaporanperkembangan', function () {
-    return view('pekerjasosial.tablelaporanperkembangan');
-});
+Route::get('/tablelaporanperkembangan',
+//  function () {
+//     return view('pekerjasosial.tablelaporanperkembangan');
+// }
+'App\Http\Controllers\LaporanPerkembanganController@index'
+);
 Route::get(
     '/edit-asi/{id}',
     // function () {
@@ -227,18 +230,23 @@ Route::get(
     'App\Http\Controllers\RencanaPelayananController@show'
 )->name('editrencanapelayanan');
 Route::get('/rencanapelayanan/delete/{id}','App\Http\Controllers\RencanaPelayananController@delete')->name('deleterencanapelayanan');
-Route::get('/edit-laporanperkembangan1', function () {
-    return view('pekerjasosial.edit-laporanperkembangan1');
-});
-Route::get('/edit-laporanperkembangan2', function () {
-    return view('pekerjasosial.edit-laporanperkembangan2');
-});
-Route::get('/edit-laporanperkembangan3', function () {
-    return view('pekerjasosial.edit-laporanperkembangan3');
-});
-Route::get('/edit-laporanperkembangan4', function () {
-    return view('pekerjasosial.edit-laporanperkembangan4');
-});
+Route::post('/laporanperkembangan/save/{id?}','App\Http\Controllers\LaporanPerkembanganController@store')->name('savelaporanperkembangan');
+Route::get('/edit-laporanperkembangan/{pemerlu?}/{bulan?}',
+// function () {
+//     return view('pekerjasosial.edit-laporanperkembangan');
+// }
+'App\Http\Controllers\LaporanPerkembanganController@show'
+)->name('editlaporanperkembangan');
+Route::get('/laporanperkembangan/delete/{id}','App\Http\Controllers\LaporanPerkembanganController@delete')->name('deletelaporanperkembangan');
+// Route::get('/edit-laporanperkembangan2', function () {
+//     return view('pekerjasosial.edit-laporanperkembangan2');
+// });
+// Route::get('/edit-laporanperkembangan3', function () {
+//     return view('pekerjasosial.edit-laporanperkembangan3');
+// });
+// Route::get('/edit-laporanperkembangan4', function () {
+//     return view('pekerjasosial.edit-laporanperkembangan4');
+// });
 
 // Route::get('/tableadministrasi', function () {
 //     return view('pekerjasosial.tableadministrasi');
@@ -276,9 +284,9 @@ Route::get('/dashboardadmin', function () {
 // Route::get('/tablerencanapelayanan', function () {
 //     return view('admin.tablerencanapelayanan');
 // });
-Route::get('/tablelaporanperkembangan', function () {
-    return view('admin.tablelaporanperkembangan');
-});
+// Route::get('/tablelaporanperkembangan', function () {
+//     return view('admin.tablelaporanperkembangan');
+// });
 Route::get('/tablehasilpengkajianawal', function () {
     return view('admin.tablehasilpengkajianawal');
 });

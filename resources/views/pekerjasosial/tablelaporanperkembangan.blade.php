@@ -37,13 +37,14 @@
 								</tr>
 							</thead>
 							 <tbody>
+								 @foreach($pemerlu as $p)
 								<tr>
-									<td class="table-plus"></td>
+									<td class="table-plus">{{$p->nama}}</td>
 									<td class="table-plus">
-                                        <a href="/edit-laporanperkembangan1" class="btn btn-primary btn-md">1</a>
-                                        <a href="/edit-laporanperkembangan2" class="btn btn-primary btn-md">2</a>
-                                        <a href="/edit-laporanperkembangan3" class="btn btn-primary btn-md">3</a>
-                                        <a href="/edit-laporanperkembangan4" class="btn btn-primary btn-md">4</a>
+                                        <a href="{{route('editlaporanperkembangan',['pemerlu'=>$p->id,'bulan'=>1])}}" class="btn btn-primary btn-md">1</a>
+                                        <a href="{{route('editlaporanperkembangan',['pemerlu'=>$p->id,'bulan'=>2])}}" class="btn btn-primary btn-md">2</a>
+                                        <a href="{{route('editlaporanperkembangan',['pemerlu'=>$p->id,'bulan'=>3])}}" class="btn btn-primary btn-md">3</a>
+                                        <a href="{{route('editlaporanperkembangan',['pemerlu'=>$p->id,'bulan'=>4])}}" class="btn btn-primary btn-md">4</a>
                                     </td>
 									
 									<td>
@@ -54,11 +55,12 @@
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 												
 												
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+												<a class="dropdown-item" href="{{route('deletelaporanperkembangan',$p->id)}}"><i class="dw dw-delete-3"></i> Delete</a>
 											</div>
 										</div>
 									</td>
 								</tr>
+								@endforeach
                                 </tbody>
 						
 						</table>
