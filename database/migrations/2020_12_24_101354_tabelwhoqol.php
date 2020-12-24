@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Tabelassist extends Migration
+class Tabelwhoqol extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,17 @@ class Tabelassist extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('tabelassist', function (Blueprint $table) {
+        Schema::create('tabelwhoqol', function (Blueprint $table) {
+            $table->id();
+            $table->integer('pemerlulayanan_id');
+            $table->date('tanggalwawancara');
+            $table->json('domain1');
+            $table->json('domain2');
+            $table->json('domain3');
+            $table->json('domain4');
             
-            $table->string('nama');
-            $table->dateTime('tanggalpemeriksaan');
         });
+
     }
 
     /**
@@ -29,6 +34,5 @@ class Tabelassist extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('tabelassist');
     }
 }

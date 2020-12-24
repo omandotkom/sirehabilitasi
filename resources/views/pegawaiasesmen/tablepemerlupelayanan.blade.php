@@ -28,6 +28,7 @@
 						<table class="data-table table stripe hover nowrap">
 							<thead>
 								<tr>
+									<th>Kode Pemerlu</th>
 									<th class="table-plus datatable-nosort">Nama</th>
 									<th>NIK</th>
 									<th>Tanggal Masuk</th>
@@ -37,6 +38,7 @@
 							<tbody>
 								@foreach($pemerlu as $p)
 								<tr>
+									<td>{{$p->id}}</td>
 									<td class="table-plus">{{$p->nama}}</td>
 									<td>{{$p->nik}}</td>
 									<td>{{$p->tanggalmasuk}}</td>

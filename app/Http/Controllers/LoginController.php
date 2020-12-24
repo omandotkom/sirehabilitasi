@@ -23,6 +23,9 @@ class LoginController extends Controller
                 case 'asesmen' :
                     return redirect()->route('dashboardasesmen');
                     break;
+                case "sosial" :
+                    return redirect()->route('dashboardsosial');
+                    break;
             }
             //return redirect()->intended('dashboard');
         }

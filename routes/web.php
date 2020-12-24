@@ -129,46 +129,72 @@ Route::get('/edit-hasilpengkajianawal', function () {
 /*pekerja sosial */
 Route::get('/dashboardpekerjasosial', function () {
     return view('pekerjasosial.dashboardpekerjasosial');
-});
+})->name('dashboardsosial');
 Route::get('/asi', function () {
     return view('pekerjasosial.asi');
 });
+
+Route::post('/asi/save/{id?}','App\Http\Controllers\AsiController@store')->name('saveasi');
+Route::get('/asi/delete/{id}','App\Http\Controllers\AsiController@delete')->name('deleteasi');
+
 Route::get('/assist', function () {
     return view('pekerjasosial.assist');
 });
+Route::post('/assist/save/{id?}','App\Http\Controllers\AssistController@store')->name('saveassist');
 Route::get('/whoqol', function () {
     return view('pekerjasosial.whoqol');
 });
+Route::post('/whoqol/save/{id?}','App\Http\Controllers\WhoqolController@store')->name('savewhoqol');
+Route::get('/whoqol/delete/{id?}','App\Http\Controllers\WhoqolController@delete')->name('deletewhoqol');
 Route::get('/rencanapelayanan', function () {
     return view('pekerjasosial.rencanapelayanan');
 });
 Route::get('/laporanperkembangan', function () {
     return view('pekerjasosial.laporanperkembangan');
 });
-Route::get('/tableasi', function () {
-    return view('pekerjasosial.tableasi');
-});
-Route::get('/tableassist', function () {
-    return view('pekerjasosial.tableassist');
-});
-Route::get('/tablewhoqol', function () {
-    return view('pekerjasosial.tablewhoqol');
-});
+Route::get('/tableasi',
+// function () {
+//     return view('pekerjasosial.tableasi');
+// }
+'App\Http\Controllers\AsiController@index'
+);
+Route::get('/tableassist',
+//  function () {
+//     return view('pekerjasosial.tableassist');
+// }
+'App\Http\Controllers\AssistController@index'
+)->name('indexassist');
+Route::get('/tablewhoqol', 
+// function () {
+//     return view('pekerjasosial.tablewhoqol');
+// }
+'App\Http\Controllers\WhoqolController@index'
+);
 Route::get('/tablerencanapelayanan', function () {
     return view('pekerjasosial.tablerencanapelayanan');
 });
 Route::get('/tablelaporanperkembangan', function () {
     return view('pekerjasosial.tablelaporanperkembangan');
 });
-Route::get('/edit-asi', function () {
-    return view('pekerjasosial.edit-asi');
-});
-Route::get('/edit-assist', function () {
-    return view('pekerjasosial.edit-assist');
-});
-Route::get('/edit-whoqol', function () {
-    return view('pekerjasosial.edit-whoqol');
-});
+Route::get('/edit-asi/{id}', 
+// function () {
+//     return view('pekerjasosial.edit-asi');
+// }
+'App\Http\Controllers\AsiController@show'
+)->name('editasi');
+Route::get('/edit-assist/{id}', 
+// function () {
+//     return view('pekerjasosial.edit-assist');
+// }
+'App\Http\Controllers\AssistController@show'
+)->name('editassist');
+Route::get('/assist/delete/{id}','App\Http\Controllers\AssistController@delete')->name('deleteassists');
+Route::get('/edit-whoqol/{id}', 
+// function () {
+//     return view('pekerjasosial.edit-whoqol');
+// }
+'App\Http\Controllers\WhoqolController@show'
+)->name('editwhoqol');
 Route::get('/edit-rencanapelayanan', function () {
     return view('pekerjasosial.edit-rencanapelayanan');
 });
@@ -209,15 +235,15 @@ Route::get('/dashboardadmin', function () {
 // Route::get('/tableriwayat', function () {
 //     return view('admin.tableriwayat');
 // });
-Route::get('/tableasi', function () {
-    return view('admin.tableasi');
-});
-Route::get('/tableassist', function () {
-    return view('admin.tableassist');
-});
-Route::get('/tablewhoqol', function () {
-    return view('admin.tablewhoqol');
-});
+// Route::get('/tableasi', function () {
+//     return view('admin.tableasi');
+// });
+// Route::get('/tableassist', function () {
+//     return view('admin.tableassist');
+// });
+// Route::get('/tablewhoqol', function () {
+//     return view('admin.tablewhoqol');
+// });
 Route::get('/tablerencanapelayanan', function () {
     return view('admin.tablerencanapelayanan');
 });

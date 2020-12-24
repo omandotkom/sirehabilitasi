@@ -40,21 +40,27 @@
 														</div>
 														
 													</div>
-													<form>
+													<form action="{{route('savewhoqol',$whoqol->id)}}" method="post">
+														@csrf
 														<div class="form-group row">
-															<label class="col-sm-12 col-md-2 col-form-label">Nama </label>
+															<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu</label>
 															<div class="col-sm-12 col-md-10">
-																<input class="form-control" type="text" placeholder="Johnny Brown">
+																<input class="form-control" value="{{$whoqol->pemerlulayanan_id}}" name="pemerlulayanan_id" type="text" placeholder="Johnny Brown">
 															</div>
 														</div>
 														<div class="form-group row">
 															<label class="col-sm-12 col-md-2 col-form-label">Tanggal Wawancara</label>
 															<div class="col-sm-12 col-md-10">
-																<input class="form-control date-picker" placeholder="Select Date" type="text">
+																<input class="form-control date-picker" value="{{$whoqol->tanggalwawancara}}" name="tanggalwawancara" placeholder="Select Date" type="text">
 															</div>
 														</div>
 													<div class="form-group row">
-												
+												@php
+													$domain1 = json_decode($whoqol->domain1);
+													$domain2 = json_decode($whoqol->domain2);
+													$domain3 = json_decode($whoqol->domain3);
+													$domain4 = json_decode($whoqol->domain4);
+												@endphp
 														<table class="table table-bordered">
 															<thead>
 																<body>
@@ -73,38 +79,35 @@
 															<tr>
 																<td>Domain 1</td>
 																<td>Q3 + Q4 + Q10 + Q15 + Q16 + Q17 + Q18</td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
+																<td><textarea name="domain1a" cols="5" rows="2">{{$domain1->a}}</textarea><br></td>
+																<td><textarea name="domain1b" cols="5" rows="2">{{$domain1->b}}</textarea><br></td>
+																<td><textarea name="domain1c" cols="5" rows="2">{{$domain1->c}}</textarea><br></td>
 															</tr>
 															<tr>
 																<td>Domain 2</td>
 																<td>Q5 + Q6 + Q7 + Q11 + Q19 + Q26</td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
+																<td><textarea name="domain2a" cols="5" rows="2">{{$domain2->a}}</textarea><br></td>
+																<td><textarea name="domain2b" cols="5" rows="2">{{$domain2->b}}</textarea><br></td>
+																<td><textarea name="domain2c" cols="5" rows="2">{{$domain2->c}}</textarea><br></td>
 															</tr>
 															<tr>
 																<td>Domain 3</td>
 																<td>Q20 + Q21 + Q22</td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
+																<td><textarea name="domain3a" cols="5" rows="2">{{$domain3->a}}</textarea><br></td>
+																<td><textarea name="domain3b" cols="5" rows="2">{{$domain3->b}}</textarea><br></td>
+																<td><textarea name="domain3c" cols="5" rows="2">{{$domain3->c}}</textarea><br></td>
 															</tr>
 															<tr>
 																<td>Domain 4</td>
 																<td>Q8 + Q9 + Q12 + Q13 + Q14 + Q23 + Q24 + Q25</td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
-																<td><textarea name="input" cols="5" rows="2"></textarea><br></td>
+																<td><textarea name="domain4a" cols="5" rows="2">{{$domain4->a}}</textarea><br></td>
+																<td><textarea name="domain4b" cols="5" rows="2">{{$domain4->b}}</textarea><br></td>
+																<td><textarea name="domain4c" cols="5" rows="2">{{$domain4->c}}</textarea><br></td>
 															</tr>
 														</table>
 														</body>
 		 													<div class="btn-list">												
 																<input class="btn btn-primary" type="submit" value="Simpan">								
-															</div>
-                                                            <div class="btn-list">												
-																<input class="btn btn-primary" type="submit" value="Cetak">								
 															</div>
 											</div>
 										</div>

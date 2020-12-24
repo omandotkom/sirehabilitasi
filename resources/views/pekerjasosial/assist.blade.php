@@ -44,17 +44,18 @@
 														</div>
 														
 													</div>
-													<form>
+													<form action="{{route('saveassist')}}" method="post">
+														@csrf
 														<div class="form-group row">
-															<label class="col-sm-12 col-md-2 col-form-label">Nama </label>
+															<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu </label>
 															<div class="col-sm-12 col-md-10">
-																<input class="form-control" type="text" placeholder="Johnny Brown">
+																<input class="form-control" type="text" name="pemerlulayanan_id" placeholder="Johnny Brown">
 															</div>
 														</div>
 														<div class="form-group row">
 															<label class="col-sm-12 col-md-2 col-form-label">Tanggal Pemeriksaan</label>
 															<div class="col-sm-12 col-md-10">
-																<input class="form-control date-picker" placeholder="Select Date" type="text">
+																<input class="form-control date-picker" name="tanggalpemeriksaan" placeholder="Select Date" type="text">
 															</div>
 														</div>
 														<body>
@@ -73,72 +74,72 @@
 																	<td>a</td>
 																	<td>Tembakau (rokok, cerutu, kretek, dll)</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="a" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>b</td>
 																	<td>Minuman beralkohol (bir, anggur, spiritus, tuak, dll)</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="b" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>c</td>
 																	<td>Kanabis (marijuana, ganja, gelek, cimeng, dll)</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="c" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>d</td>
 																	<td>Kokain</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="d" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>e</td>
 																	<td>Stimulan jenis amfetamin (ekstasi, shabu, dll)</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="e" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>f</td>
 																	<td>Inhalansia (lem, bensin, tiner, dll)</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="f" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>g</td>
 																	<td>Sedatif atau obat tidur (Pil koplo, Valium, Dumolid, Lexotan, Rohypnol, Mogadon, dll)</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="g" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>h</td>
 																	<td>Halusinogen (LSD, mushrooms, PCP, dll)</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="h" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>i</td>
 																	<td>Opioid(heroin, putaw, morfin, metadon, kodein, dll)</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="i" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 																<tr>
 																	<td>j</td>
 																	<td>
-																	<textarea name="input" cols="20" rows="2"></textarea><br>
+																	<textarea name="jname" cols="20" rows="2"></textarea><br>
 																	</td>
 																	<td>
-																	<textarea name="input" cols="10" rows="2"></textarea><br>
+																	<textarea name="jvalue" cols="10" rows="2"></textarea><br>
 																	</td>
 																</tr>
 															</tbody>

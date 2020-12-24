@@ -37,9 +37,10 @@
 								</tr>
 							</thead>
 							 <tbody>
+								 @foreach($pemerlu as $p)
 								<tr>
-									<td class="table-plus"></td>
-									<td class="table-plus"></td>
+									<td class="table-plus">{{$p->nama}}</td>
+									<td class="table-plus">{{$p->tanggalwawancara}}</td>
 									
 									<td>
 										<div class="dropdown">
@@ -48,13 +49,14 @@
 											</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 												
-												<a class="dropdown-item" href="/edit-whoqol"><i class="dw dw-edit2"></i> Edit and View</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+												<a class="dropdown-item" href="{{route('editwhoqol',$p->idwhoqol)}}"><i class="dw dw-edit2"></i> Edit and View</a>
+												<a class="dropdown-item" href="{{route('deletewhoqol',$p->idwhoqol)}}"><i class="dw dw-delete-3"></i> Delete</a>
 											</div>
 										</div>
 									</td>
 								</tr>
-                                </tbody>
+		   						@endforeach
+							</tbody>
 						
 						</table>
 					</div>
