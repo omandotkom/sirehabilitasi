@@ -26,73 +26,84 @@ Route::get('/dashboardasesmen', function () {
 Route::get('/datapemerlupelayanan', function () {
     return view('pegawaiasesmen.datapemerlupelayanan');
 });
-Route::get('/administrasi/{id?}',
-// function () {
-//     return view('pegawaiasesmen.administrasi');
-// }
-'App\Http\Controllers\AdministrasiController@byPemerlu'
+Route::get(
+    '/administrasi/{id?}',
+    // function () {
+    //     return view('pegawaiasesmen.administrasi');
+    // }
+    'App\Http\Controllers\AdministrasiController@byPemerlu'
 )->name('administrasibypemerlu');
-Route::post('/administrasi/save/{id?}',
+Route::post(
+    '/administrasi/save/{id?}',
     'App\Http\Controllers\AdministrasiController@store'
 )->name('saveadministrasi');
-Route::get("/administrasi/download/{path}",'App\Http\Controllers\AdministrasiController@download')->name('downloadadministrasi');
-Route::get("/administrasi/delete/{id}",'App\Http\Controllers\AdministrasiController@delete')->name('deleteadministrasi');
-Route::get('/riwayatpemerlupelayanan/{id}',
+Route::get("/administrasi/download/{path}", 'App\Http\Controllers\AdministrasiController@download')->name('downloadadministrasi');
+Route::get("/administrasi/delete/{id}", 'App\Http\Controllers\AdministrasiController@delete')->name('deleteadministrasi');
+Route::get(
+    '/riwayatpemerlupelayanan/{id}',
 
-// function () {
-//     return view('pegawaiasesmen.riwayatpemerlupelayanan');
-// }
-'App\Http\Controllers\RiwayatPemerluLayananController@byPemerlu'
+    // function () {
+    //     return view('pegawaiasesmen.riwayatpemerlupelayanan');
+    // }
+    'App\Http\Controllers\RiwayatPemerluLayananController@byPemerlu'
 )->name('riwayatbypemerluid');
-Route::post('/riwayatpemerlulayanan/save/{id?}','App\Http\Controllers\RiwayatPemerluLayananController@store')->name('saveriwayatpemerlulayanan');
+Route::post('/riwayatpemerlulayanan/save/{id?}', 'App\Http\Controllers\RiwayatPemerluLayananController@store')->name('saveriwayatpemerlulayanan');
 
-Route::get('/tablepemerlupelayanan', 
-// function () {
-//     return view('pegawaiasesmen.tablepemerlupelayanan');
-// }
+Route::get(
+    '/tablepemerlupelayanan',
+    // function () {
+    //     return view('pegawaiasesmen.tablepemerlupelayanan');
+    // }
     'App\Http\Controllers\PemerluPelayananController@index'
 )->name('indexpemerlulayanan');
 
-Route::post('/tablepemerlupelayanan/save/{id?}', 
+Route::post(
+    '/tablepemerlupelayanan/save/{id?}',
     'App\Http\Controllers\PemerluPelayananController@store'
 )->name('savepemerlupelayanan');
-Route::post('/tablepemerlupelayanan/delete/{id}', 
+Route::post(
+    '/tablepemerlupelayanan/delete/{id}',
     'App\Http\Controllers\PemerluPelayananController@delete'
 )->name('deletepemerlupelayanan');
 
-Route::get('/tableriwayat', 
-// function () {
-//     return view('pegawaiasesmen.tableriwayat');
-// }
-'App\Http\Controllers\RiwayatPemerluLayananController@index'
+Route::get(
+    '/tableriwayat',
+    // function () {
+    //     return view('pegawaiasesmen.tableriwayat');
+    // }
+    'App\Http\Controllers\RiwayatPemerluLayananController@index'
 )->name('indexriwayatpemerlulayanan');
-Route::get('/tableadministrasi',
-// function () {
-//     return view('pegawaiasesmen.tableadministrasi');
-// }
-'App\Http\Controllers\AdministrasiController@index'
+Route::get(
+    '/tableadministrasi',
+    // function () {
+    //     return view('pegawaiasesmen.tableadministrasi');
+    // }
+    'App\Http\Controllers\AdministrasiController@index'
 )->name('administrasi');
 
 
 /*tab menu edit untuk melihat dan merubah data admn */
-Route::get('/edit-administrasi/{id}',
-// function () {
-//     return view('pegawaiasesmen.edit-administrasi');
-// }
-'App\Http\Controllers\AdministrasiController@show'
+Route::get(
+    '/edit-administrasi/{id}',
+    // function () {
+    //     return view('pegawaiasesmen.edit-administrasi');
+    // }
+    'App\Http\Controllers\AdministrasiController@show'
 )->name('editadministrasi');
-Route::get('/edit-riwayatpemerlupelayanan/{id}',
-// function () { 
-//     return view('pegawaiasesmen.edit-riwayatpemerlupelayanan');
-// }
-'App\Http\Controllers\RiwayatPemerluLayananController@show'
+Route::get(
+    '/edit-riwayatpemerlupelayanan/{id}',
+    // function () { 
+    //     return view('pegawaiasesmen.edit-riwayatpemerlupelayanan');
+    // }
+    'App\Http\Controllers\RiwayatPemerluLayananController@show'
 )->name('editiwayatpemerlupelayanan');
-Route::get('/edit-pemerlupelayanan/{id?}', 
-// function () {
-//     return view('pegawaiasesmen.edit-pemerlupelayanan');
-// }
-'App\Http\Controllers\PemerluPelayananController@show'
-)->name('showpemerlupelayanan'); 
+Route::get(
+    '/edit-pemerlupelayanan/{id?}',
+    // function () {
+    //     return view('pegawaiasesmen.edit-pemerlupelayanan');
+    // }
+    'App\Http\Controllers\PemerluPelayananController@show'
+)->name('showpemerlupelayanan');
 
 /*perawat */
 Route::get('/dashboardperawat', function () {
@@ -134,70 +145,88 @@ Route::get('/asi', function () {
     return view('pekerjasosial.asi');
 });
 
-Route::post('/asi/save/{id?}','App\Http\Controllers\AsiController@store')->name('saveasi');
-Route::get('/asi/delete/{id}','App\Http\Controllers\AsiController@delete')->name('deleteasi');
+Route::post('/asi/save/{id?}', 'App\Http\Controllers\AsiController@store')->name('saveasi');
+Route::get('/asi/delete/{id}', 'App\Http\Controllers\AsiController@delete')->name('deleteasi');
 
 Route::get('/assist', function () {
     return view('pekerjasosial.assist');
 });
-Route::post('/assist/save/{id?}','App\Http\Controllers\AssistController@store')->name('saveassist');
+Route::post('/assist/save/{id?}', 'App\Http\Controllers\AssistController@store')->name('saveassist');
 Route::get('/whoqol', function () {
     return view('pekerjasosial.whoqol');
 });
-Route::post('/whoqol/save/{id?}','App\Http\Controllers\WhoqolController@store')->name('savewhoqol');
-Route::get('/whoqol/delete/{id?}','App\Http\Controllers\WhoqolController@delete')->name('deletewhoqol');
+Route::post('/whoqol/save/{id?}', 'App\Http\Controllers\WhoqolController@store')->name('savewhoqol');
+Route::get('/whoqol/delete/{id?}', 'App\Http\Controllers\WhoqolController@delete')->name('deletewhoqol');
 Route::get('/rencanapelayanan', function () {
     return view('pekerjasosial.rencanapelayanan');
 });
+Route::post('/rencanapelayanan/save/{id?}', 'App\Http\Controllers\RencanaPelayananController@store')->name('saverencanapelayanan');
+
+
 Route::get('/laporanperkembangan', function () {
     return view('pekerjasosial.laporanperkembangan');
 });
-Route::get('/tableasi',
-// function () {
-//     return view('pekerjasosial.tableasi');
-// }
-'App\Http\Controllers\AsiController@index'
+Route::get(
+    '/tableasi',
+    // function () {
+    //     return view('pekerjasosial.tableasi');
+    // }
+    'App\Http\Controllers\AsiController@index'
 );
-Route::get('/tableassist',
-//  function () {
-//     return view('pekerjasosial.tableassist');
-// }
-'App\Http\Controllers\AssistController@index'
+Route::get(
+    '/tableassist',
+    //  function () {
+    //     return view('pekerjasosial.tableassist');
+    // }
+    'App\Http\Controllers\AssistController@index'
 )->name('indexassist');
-Route::get('/tablewhoqol', 
-// function () {
-//     return view('pekerjasosial.tablewhoqol');
-// }
-'App\Http\Controllers\WhoqolController@index'
+Route::get(
+    '/tablewhoqol',
+    // function () {
+    //     return view('pekerjasosial.tablewhoqol');
+    // }
+    'App\Http\Controllers\WhoqolController@index'
 );
-Route::get('/tablerencanapelayanan', function () {
-    return view('pekerjasosial.tablerencanapelayanan');
-});
+Route::get(
+    '/tablerencanapelayanan',
+    // function () {
+    //     return view('pekerjasosial.tablerencanapelayanan');
+    // }
+    'App\Http\Controllers\RencanaPelayananController@index'
+);
 Route::get('/tablelaporanperkembangan', function () {
     return view('pekerjasosial.tablelaporanperkembangan');
 });
-Route::get('/edit-asi/{id}', 
-// function () {
-//     return view('pekerjasosial.edit-asi');
-// }
-'App\Http\Controllers\AsiController@show'
+Route::get(
+    '/edit-asi/{id}',
+    // function () {
+    //     return view('pekerjasosial.edit-asi');
+    // }
+    'App\Http\Controllers\AsiController@show'
 )->name('editasi');
-Route::get('/edit-assist/{id}', 
-// function () {
-//     return view('pekerjasosial.edit-assist');
-// }
-'App\Http\Controllers\AssistController@show'
+Route::get(
+    '/edit-assist/{id}',
+    // function () {
+    //     return view('pekerjasosial.edit-assist');
+    // }
+    'App\Http\Controllers\AssistController@show'
 )->name('editassist');
-Route::get('/assist/delete/{id}','App\Http\Controllers\AssistController@delete')->name('deleteassists');
-Route::get('/edit-whoqol/{id}', 
-// function () {
-//     return view('pekerjasosial.edit-whoqol');
-// }
-'App\Http\Controllers\WhoqolController@show'
+Route::get('/assist/delete/{id}', 'App\Http\Controllers\AssistController@delete')->name('deleteassists');
+Route::get(
+    '/edit-whoqol/{id}',
+    // function () {
+    //     return view('pekerjasosial.edit-whoqol');
+    // }
+    'App\Http\Controllers\WhoqolController@show'
 )->name('editwhoqol');
-Route::get('/edit-rencanapelayanan', function () {
-    return view('pekerjasosial.edit-rencanapelayanan');
-});
+Route::get(
+    '/edit-rencanapelayanan/{id}',
+    // function () {
+    //     return view('pekerjasosial.edit-rencanapelayanan');
+    // }
+    'App\Http\Controllers\RencanaPelayananController@show'
+)->name('editrencanapelayanan');
+Route::get('/rencanapelayanan/delete/{id}','App\Http\Controllers\RencanaPelayananController@delete')->name('deleterencanapelayanan');
 Route::get('/edit-laporanperkembangan1', function () {
     return view('pekerjasosial.edit-laporanperkembangan1');
 });
@@ -244,9 +273,9 @@ Route::get('/dashboardadmin', function () {
 // Route::get('/tablewhoqol', function () {
 //     return view('admin.tablewhoqol');
 // });
-Route::get('/tablerencanapelayanan', function () {
-    return view('admin.tablerencanapelayanan');
-});
+// Route::get('/tablerencanapelayanan', function () {
+//     return view('admin.tablerencanapelayanan');
+// });
 Route::get('/tablelaporanperkembangan', function () {
     return view('admin.tablelaporanperkembangan');
 });
@@ -269,5 +298,5 @@ Route::get('/editakunpegawai', function () {
 });
 
 
-Route::post('/login',[LoginController::class, 'authenticate'])->name('login');
-Route::post('/logout',[LoginController::class, 'logout'])->name('logout');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

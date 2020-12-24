@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Tabelrencanapelayanan extends Migration
+class Tabelrencanapenanganan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class Tabelrencanapelayanan extends Migration
      */
     public function up()
     {
-        //
         Schema::create('tabelrencanapelayanan', function (Blueprint $table) {
-            
-            $table->string('nama');
-            $table->dateTime('tanggalmasuk');
-            $table->dateTime('tanggalprogram');
+            $table->id();
+            $table->integer('pemerlulayanan_id');
+            $table->date('tanggalmasuk');
+            $table->date('tanggalprogram');
           /*  $table->('genomap'); */
             
             $table->longText('riwayatkeluarga');
@@ -36,9 +35,10 @@ class Tabelrencanapelayanan extends Migration
             $table->longText('permasalahankeluarga');
             $table->longText('rumusanmasalah');
             $table->longText('waktulayanan');
+
+            $table->text('genomap');
+            $table->text('fokus');
           /*  $table->('fokuspenanganan'); */
-
-
         });
     }
 
@@ -50,6 +50,5 @@ class Tabelrencanapelayanan extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('tabelrencanapelayanan');
     }
 }

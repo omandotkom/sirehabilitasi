@@ -29,109 +29,110 @@
 							<h4 class="text-blue h4">Rencana Pelayanan</h4>
 						</div>
 					</div>
-					<form>
+					<form action="{{route('saverencanapelayanan')}}" method="post" enctype="multipart/form-data" >
+						@csrf
 						<h9>A. Identitas Residen</h9>
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" placeholder="Johnny Brown">
+								<input class="form-control" name="pemerlulayanan_id" type="text" placeholder="Johnny Brown">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Tanggal masuk panti</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control date-picker" placeholder="Select Date" type="text">
+								<input class="form-control date-picker" name="tanggalmasuk" placeholder="Select Date" type="text">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Tanggal masuk program</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control date-picker" placeholder="Select Date" type="text">
+								<input class="form-control date-picker" name="tanggalprogram" placeholder="Select Date" type="text">
 							</div>
 						</div>
 						<h9>B. Latar Belakang Masalah</h9>
 
 						<div class="form-group">
 							<label>Genomap Residen</label>
-							<input type="file" class="form-control-file form-control height-auto">
+							<input type="file" name="genomap" class="form-control-file form-control height-auto">
 						</div>
 						<div class="form-group">
 							<label>1. Riwayat Keluarga</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="riwayatkeluarga" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label>2. Riwayat Sekolah dan Bekerja </label>
-							<textarea class="form-control"></textarea>
+							<textarea name="riwayatsekolah" class="form-control"></textarea>
 						</div>
 						<!--nanti ambil dari db peg asesmen yg riwayat/terlampir-->
 						<div class="form-group">
 							<label>3. Riwayat Penggunaan NAPZA</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="riwayatnapza" class="form-control"></textarea>
 						</div>
 
 
 						<h9>C. Kondisi Saat Ini</h9>
 						<div class="form-group">
 							<label>1. Aspek Fisik dan Kesehatan</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="aspekkesehatan" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label>2. Aspek Sosial</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="aspeksosial" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label>3. Aspek Psikologis</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="aspekpsikologis" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label>4. Aspek Mental Spiritual</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="aspekmentalspiritual" class="form-control"></textarea>
 						</div>
 
 						<h9>D. Potensi dan Sumber-Sumber Yang Tersedia</h9>
 						<div class="form-group">
 							<label>1. Internal</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="potensiinternal" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label>2. Eksternal</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="potensieksternal" class="form-control"></textarea>
 						</div>
 						
 						<h9>E. Analisa Masalah</h9>
 						<div class="form-group">
 							<label>1. Faktor Genetik</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="faktorgenetik" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label>2. Faktor Personal</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="faktorpersonal" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label>3. Faktor Lingkungan</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="faktorlingkungan" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label>4. Permasalahan Keluarga</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="permasalahankeluarga" class="form-control"></textarea>
 						</div>
 
 						
 						<div class="form-group">
 						    <label><h9>F. Rumusan Masalah</h9></label>
-							<textarea class="form-control"></textarea>
+							<textarea name="rumusanmasalah" class="form-control"></textarea>
 						</div>
 
 
 						<h9>G. Rencana Intervensi</h9>
 						<div class="form-group">
 							<label>1. Waktu Layanan</label>
-							<textarea class="form-control"></textarea>
+							<textarea name="waktulayanan" class="form-control"></textarea>
 						</div>
 						<div class="form-group">
 							<label><h9>2. Fokus Penanganan</h9></label>
 							
-							<input type="file" class="form-control-file form-control height-auto" name="suratperjanjian">
+							<input type="file" name="fokus" class="form-control-file form-control height-auto" name="suratperjanjian">
 						</div>
 						<div class="btn-list">												
 							<input class="btn btn-primary" type="submit" value="Simpan">								
