@@ -34,9 +34,17 @@
 							
 							
 						
-						<form>
-						
-						
+						<form method="post" enctype="multipart/form-data" action="{{route('saveadministrasi',$administrasi->id)}}">
+						@csrf
+						@php
+							$administrasi->ktp = base64_encode($administrasi->ktp);
+							$administrasi->kk = base64_encode($administrasi->kk);
+							$administrasi->ktportu = base64_encode($administrasi->ktportu);
+							$administrasi->suratpemohonanortu = base64_encode($administrasi->suratpemohonanortu);
+							$administrasi->suratpernyataanortu = base64_encode($administrasi->suratpernyataanortu);
+							$administrasi->suratpemerlupelayanan = base64_encode($administrasi->suratpemerlupelayanan);
+							$administrasi->suratperjanjian = base64_encode($administrasi->suratperjanjian);
+						@endphp
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
 							<div class="col-sm-12 col-md-10">
@@ -46,30 +54,37 @@
 						<div class="form-group">
 							<label>Kartu Keluarga</label>
 							<input type="file" class="form-control-file form-control height-auto" name="kk">
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->kk)}}">Unduh</a>
 						</div>
 						<div class="form-group">
 							<label>KTP</label>
 							<input type="file" class="form-control-file form-control height-auto" name="ktp">
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->ktp)}}">Unduh</a>
 						</div>
 						<div class="form-group">
 							<label>KTP Orang Tua/Istri(bila sudah menikah)</label>
 							<input type="file" class="form-control-file form-control height-auto" name="ktportu">
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->ktportu)}}">Unduh</a>
 						</div>
 						<div class="form-group">
 							<label>Surat Permohonan Orang Tua</label>
 							<input type="file" class="form-control-file form-control height-auto" name="suratpemohonanortu">
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->suratpemohonanortu)}}">Unduh</a>
 						</div>
 						<div class="form-group">
 							<label>Surat Pernyataan Orang Tua/Wali</label>
 							<input type="file" class="form-control-file form-control height-auto" name="suratpernyataanortu">
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->suratpernyataanortu)}}">Unduh</a>
 						</div>
 						<div class="form-group">
 							<label>Surat Pernyataan Pemerlu Pelayanan Kesejahteraan Sosial</label>
 							<input type="file" class="form-control-file form-control height-auto" name="suratpemerlupelayanan">
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->suratpemerlupelayanan)}}">Unduh</a>
 						</div>
 						<div class="form-group">
 							<label>Surat Perjanjian</label>
 							<input type="file" class="form-control-file form-control height-auto" name="suratperjanjian">
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->suratperjanjian)}}">Unduh</a>
 						</div>
 						<div class="btn-list">
 							<input class="btn btn-primary" type="submit" value="Simpan">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,37 +22,77 @@ Route::get('/', function () {
 /*pegawai asesmen */
 Route::get('/dashboardasesmen', function () {
     return view('pegawaiasesmen.dashboard');
-});
+})->name('dashboardasesmen');
 Route::get('/datapemerlupelayanan', function () {
     return view('pegawaiasesmen.datapemerlupelayanan');
 });
-Route::get('/administrasi', function () {
-    return view('pegawaiasesmen.administrasi');
-});
-Route::get('/riwayatpemerlupelayanan', function () {
-    return view('pegawaiasesmen.riwayatpemerlupelayanan');
-});
-Route::get('/tablepemerlupelayanan', function () {
-    return view('pegawaiasesmen.tablepemerlupelayanan');
-});
-Route::get('/tableriwayat', function () {
-    return view('pegawaiasesmen.tableriwayat');
-});
-Route::get('/tableadministrasi', function () {
-    return view('pegawaiasesmen.tableadministrasi');
-});
+Route::get('/administrasi/{id?}',
+// function () {
+//     return view('pegawaiasesmen.administrasi');
+// }
+'App\Http\Controllers\AdministrasiController@byPemerlu'
+)->name('administrasibypemerlu');
+Route::post('/administrasi/save/{id?}',
+    'App\Http\Controllers\AdministrasiController@store'
+)->name('saveadministrasi');
+Route::get("/administrasi/download/{path}",'App\Http\Controllers\AdministrasiController@download')->name('downloadadministrasi');
+Route::get("/administrasi/delete/{id}",'App\Http\Controllers\AdministrasiController@delete')->name('deleteadministrasi');
+Route::get('/riwayatpemerlupelayanan/{id}',
+
+// function () {
+//     return view('pegawaiasesmen.riwayatpemerlupelayanan');
+// }
+'App\Http\Controllers\RiwayatPemerluLayananController@byPemerlu'
+)->name('riwayatbypemerluid');
+Route::post('/riwayatpemerlulayanan/save/{id?}','App\Http\Controllers\RiwayatPemerluLayananController@store')->name('saveriwayatpemerlulayanan');
+
+Route::get('/tablepemerlupelayanan', 
+// function () {
+//     return view('pegawaiasesmen.tablepemerlupelayanan');
+// }
+    'App\Http\Controllers\PemerluPelayananController@index'
+)->name('indexpemerlulayanan');
+
+Route::post('/tablepemerlupelayanan/save/{id?}', 
+    'App\Http\Controllers\PemerluPelayananController@store'
+)->name('savepemerlupelayanan');
+Route::post('/tablepemerlupelayanan/delete/{id}', 
+    'App\Http\Controllers\PemerluPelayananController@delete'
+)->name('deletepemerlupelayanan');
+
+Route::get('/tableriwayat', 
+// function () {
+//     return view('pegawaiasesmen.tableriwayat');
+// }
+'App\Http\Controllers\RiwayatPemerluLayananController@index'
+)->name('indexriwayatpemerlulayanan');
+Route::get('/tableadministrasi',
+// function () {
+//     return view('pegawaiasesmen.tableadministrasi');
+// }
+'App\Http\Controllers\AdministrasiController@index'
+)->name('administrasi');
 
 
 /*tab menu edit untuk melihat dan merubah data admn */
-Route::get('/edit-administrasi', function () {
-    return view('pegawaiasesmen.edit-administrasi');
-});
-Route::get('/edit-riwayatpemerlupelayanan', function () {
-    return view('pegawaiasesmen.edit-riwayatpemerlupelayanan');
-});
-Route::get('/edit-pemerlupelayanan', function () {
-    return view('pegawaiasesmen.edit-pemerlupelayanan');
-}); 
+Route::get('/edit-administrasi/{id}',
+// function () {
+//     return view('pegawaiasesmen.edit-administrasi');
+// }
+'App\Http\Controllers\AdministrasiController@show'
+)->name('editadministrasi');
+Route::get('/edit-riwayatpemerlupelayanan/{id}',
+// function () { 
+//     return view('pegawaiasesmen.edit-riwayatpemerlupelayanan');
+// }
+'App\Http\Controllers\RiwayatPemerluLayananController@show'
+)->name('editiwayatpemerlupelayanan');
+Route::get('/edit-pemerlupelayanan/{id?}', 
+// function () {
+//     return view('pegawaiasesmen.edit-pemerlupelayanan');
+// }
+'App\Http\Controllers\PemerluPelayananController@show'
+)->name('showpemerlupelayanan'); 
 
 /*perawat */
 Route::get('/dashboardperawat', function () {
@@ -144,30 +185,30 @@ Route::get('/edit-laporanperkembangan4', function () {
     return view('pekerjasosial.edit-laporanperkembangan4');
 });
 
-Route::get('/tableadministrasi', function () {
-    return view('pekerjasosial.tableadministrasi');
-});
-Route::get('/tablepemerlupelayanan', function () {
-    return view('pekerjasosial.tablepemerlupelayanan');
-});
-Route::get('/tableriwayat', function () {
-    return view('pekerjasosial.tableriwayat');
-});
+// Route::get('/tableadministrasi', function () {
+//     return view('pekerjasosial.tableadministrasi');
+// });
+// Route::get('/tablepemerlupelayanan', function () {
+//     return view('pekerjasosial.tablepemerlupelayanan');
+// });
+// Route::get('/tableriwayat', function () {
+//     return view('pekerjasosial.tableriwayat');
+// });
 
 
 /*admin */
 Route::get('/dashboardadmin', function () {
     return view('admin.dashboardadmin');
-});
-Route::get('/tableadministrasi', function () {
-    return view('admin.tableadministrasi');
-});
-Route::get('/tablepemerlupelayanan', function () {
-    return view('admin.tablepemerlupelayanan');
-});
-Route::get('/tableriwayat', function () {
-    return view('admin.tableriwayat');
-});
+})->name('dashboardadmin');
+// Route::get('/tableadministrasi', function () {
+//     return view('admin.tableadministrasi');
+// });
+// Route::get('/tablepemerlupelayanan', function () {
+//     return view('admin.tablepemerlupelayanan');
+// });
+// Route::get('/tableriwayat', function () {
+//     return view('admin.tableriwayat');
+// });
 Route::get('/tableasi', function () {
     return view('admin.tableasi');
 });
@@ -200,3 +241,7 @@ Route::get('/daftarakunpegawai', function () {
 Route::get('/editakunpegawai', function () {
     return view('admin.editakunpegawai');
 });
+
+
+Route::post('/login',[LoginController::class, 'authenticate'])->name('login');
+Route::post('/logout',[LoginController::class, 'logout'])->name('logout');

@@ -15,6 +15,8 @@ class Tabeladministrasi extends Migration
     {
         //
         Schema::create('tabeladministrasi', function (Blueprint $table) {
+            $table->id();
+            $table->integer('pemerlulayanan_id');
             $table->string('nama');
             $table->string('kk');
             $table->string('ktp');

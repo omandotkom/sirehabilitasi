@@ -28,12 +28,13 @@
 									
 									<th class="datatable-nosort">Aksi</th>
 								</tr>
+								
 							</thead>
 						    <tbody>
-								<tr>
-									<td class="table-plus"></td>
+							@foreach($pemerlu as $p)
 									
-									
+							<tr>
+									<td class="table-plus">{{$p->nama}}</td>
 									<td>
 										<div class="dropdown">
 											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -41,12 +42,13 @@
 											</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 												
-												<a class="dropdown-item" href="/edit-riwayatpemerlupelayanan"><i class="dw dw-edit2"></i> View and Edit</a>
+												<a class="dropdown-item" href="{{route('editiwayatpemerlupelayanan',$p->idriwayat)}}"><i class="dw dw-edit2"></i> View and Edit</a>
 												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
 											</div>
 										</div>
 									</td>
 								</tr>
+							@endforeach
                             </tbody>
                         </table>
                     </div>

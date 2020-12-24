@@ -14,9 +14,9 @@ class Tabelasi extends Migration
     public function up()
     {
         //
-        Schema::create('tabelasi', function (Blueprint $table) {
+        // Schema::create('tabelasi', function (Blueprint $table) {
             
-        });
+        // });
     }
 
     /**

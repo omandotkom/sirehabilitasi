@@ -15,6 +15,8 @@ class Tabelriwayat extends Migration
     {
         //
         Schema::create('tabelriwayat', function (Blueprint $table) {
+            $table->id();
+            $table->integer('pemerlulayanan_id');
             $table->string('nama');
             $table->string('sd');
             $table->string('smp');
@@ -24,8 +26,6 @@ class Tabelriwayat extends Migration
             $table->string('namalembaga');
             $table->string('jenispelayanan');
             $table->string('hasil');
-
-
         });
     }
 

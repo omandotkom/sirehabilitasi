@@ -34,15 +34,16 @@
 							
 							
 						
-						<form>
+						<form action="{{route('saveadministrasi')}}" method="post" enctype="multipart/form-data">
 						
-						
+						@csrf
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
 							<div class="col-sm-12 col-md-10">
-							<input class="form-control" type="text" placeholder="" name="nama">
+							<input class="form-control" type="text" placeholder="" value="{{$pemerlu->nama}}" name="nama">
 							</div>
 						</div>
+						<input type="hidden" value="{{$pemerlu->id}}" name="pemerlulayanan_id"/>
 						<div class="form-group">
 							<label>Kartu Keluarga</label>
 							<input type="file" class="form-control-file form-control height-auto" name="kk">

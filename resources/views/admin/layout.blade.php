@@ -51,13 +51,15 @@
 						<span class="user-icon">
 							<img src="vendors/images/photo1.jpg" alt="">
 						</span>
-						<span class="user-name">Nama</span>
+						<span class="user-name">{{Auth::user()->name}}</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
-						
-						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+						<form action="{{route('logout')}}" method="post">
+							@csrf
+						<input type="submit" class="dropdown-item" ><i class="dw dw-logout"></i> Log Out</input>
+						</form>
 					</div>
 				</div>
 			</div>

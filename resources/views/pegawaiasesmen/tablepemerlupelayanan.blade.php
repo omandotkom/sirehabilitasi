@@ -35,25 +35,28 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($pemerlu as $p)
 								<tr>
-									<td class="table-plus"></td>
-									<td></td>
-									<td></td>
+									<td class="table-plus">{{$p->nama}}</td>
+									<td>{{$p->nik}}</td>
+									<td>{{$p->tanggalmasuk}}</td>
 									<td>
 										<div class="dropdown">
 											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 												<i class="dw dw-more"></i>
 											</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												
-												<a class="dropdown-item" href="/edit-pemerlupelayanan"><i class="dw dw-edit2"></i>View and Edit</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+											
+												<a class="dropdown-item" href="{{route('showpemerlupelayanan',$p->id)}}"><i class="dw dw-edit2"></i>View and Edit</a>
+												<a class="dropdown-item" href="{{route('riwayatbypemerluid',$p->id)}}"><i class="dw dw-edit2"></i>Riwayat</a>
+												<a class="dropdown-item" href="{{route('administrasibypemerlu',$p->id)}}"><i class="dw dw-edit2"></i>Administrasi</a>
+												<a class="dropdown-item" href="{{route('deletepemerlupelayanan',$p->id)}}"><i class="dw dw-delete-3"></i> Delete</a>
 											</div>
 										</div>
 									</td>
 								</tr>
 								
-								
+								@endforeach
 							</tbody>
 						</table>
 					

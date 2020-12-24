@@ -15,27 +15,28 @@ class Tabelpemerlupelayanan extends Migration
     {
         //
         Schema::create('tabelpemerlupelayanan', function (Blueprint $table) {
-            $table->dateTime('tanggalmasuk');
+            $table->id();
+            $table->date('tanggalmasuk');
             $table->string('nama');
-            $table->integer('nik');
-            $table->integer('nomorkk');
+            $table->string('nik');
+            $table->string('nomorkk');
             $table->enum('statuspernikahan',['menikah','belummenikah']);
             $table->string('tempatlahir');
-            $table->dateTime('tanggallahir');
+            $table->date('tanggallahir');
             $table->string('tempattinggaltetap');
-            $table->integer('nomortelepon');
+            $table->string('nomortelepon');
             $table->enum('pendidikanterakhir',['sd','smp','sma','s1']);
             $table->string('namaayah');
-            $table->integer('nikayah');
-            $table->integer('nomorkkayah');
-            $table->integer('tempatlahirayah');
-            $table->dateTime('tanggallahirayah');
+            $table->string('nikayah');
+            $table->string('nomorkkayah');
+            $table->string('tempatlahirayah');
+            $table->date('tanggallahirayah');
             $table->string('pekerjaanayah');
             $table->string('namaibu');
-            $table->integer('nikibu');
-            $table->integer('nomorkkibu');
-            $table->integer('tempatlahiribu');
-            $table->dateTime('tanggallahiribu');
+            $table->string('nikibu');
+            $table->string('nomorkkibu');
+            $table->string('tempatlahiribu');
+            $table->date('tanggallahiribu');
             $table->string('pekerjaanibu');
         });
         }
