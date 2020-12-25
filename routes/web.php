@@ -108,16 +108,21 @@ Route::get(
 /*perawat */
 Route::get('/dashboardperawat', function () {
     return view('perawat.dashboardperawat');
-});
+})->name('dashboardperawat');
+
 Route::get('/hasilpengkajianawal', function () {
     return view('perawat.hasilpengkajianawal');
 });
+Route::post('/hasilpengkajianawal/save/{id?}','App\Http\Controllers\PengkajianAwalController@store')->name('savepengkajianawal');
 Route::get('/catatanperkembangan', function () {
     return view('perawat.catatanperkembangan');
 });
-Route::get('/tablehasilpengkajianawal', function () {
-    return view('perawat.tablehasilpengkajianawal');
-});
+Route::get('/tablehasilpengkajianawal', 
+// function () {
+//     return view('perawat.tablehasilpengkajianawal');
+// }
+'App\Http\Controllers\PengkajianAwalController@index'
+);
 Route::get('/tablecatatanperkembangan', function () {
     return view('perawat.tablecatatanperkembangan');
 });
@@ -133,10 +138,13 @@ Route::get('/edit-catatanperkembangan3', function () {
 Route::get('/edit-catatanperkembangan4', function () {
     return view('perawat.edit-catatanperkembangan4');
 });
-Route::get('/edit-hasilpengkajianawal', function () {
-    return view('perawat.edit-hasilpengkajianawal');
-});
-
+Route::get('/edit-hasilpengkajianawal/{id?}', 
+// function () {
+//     return view('perawat.edit-hasilpengkajianawal');
+// }
+'App\Http\Controllers\PengkajianAwalController@show'
+)->name('editpengkajianawal');
+Route::get('/pengkajianawal/delete/{id}','App\Http\Controllers\PengkajianAwalController@delete')->name('deletepengkajianawal');
 /*pekerja sosial */
 Route::get('/dashboardpekerjasosial', function () {
     return view('pekerjasosial.dashboardpekerjasosial');
@@ -287,9 +295,9 @@ Route::get('/dashboardadmin', function () {
 // Route::get('/tablelaporanperkembangan', function () {
 //     return view('admin.tablelaporanperkembangan');
 // });
-Route::get('/tablehasilpengkajianawal', function () {
-    return view('admin.tablehasilpengkajianawal');
-});
+// Route::get('/tablehasilpengkajianawal', function () {
+//     return view('admin.tablehasilpengkajianawal');
+// });
 Route::get('/tablecatatanperkembangan', function () {
     return view('admin.tablecatatanperkembangan');
 });
