@@ -33,13 +33,14 @@
 								</tr>
 							</thead>
 							 <tbody>
+								 @foreach($pemerlu as $p)
 								<tr>
-									<td class="table-plus"></td>
+									<td class="table-plus">{{$p->nama}}</td>
 									<td class="table-plus">
-                                        <a href="/edit-catatanperkembangan1" class="btn btn-primary btn-md">1</a>
-                                        <a href="/edit-catatanperkembangan2" class="btn btn-primary btn-md">2</a>
-                                        <a href="/edit-catatanperkembangan3" class="btn btn-primary btn-md">3</a>
-                                        <a href="/edit-catatanperkembangan4" class="btn btn-primary btn-md">4</a>
+                                        <a href="{{route('editcatatanperkembangan',['pemerlu'=>$p->id,'bulan'=>1])}}" class="btn btn-primary btn-md">1</a>
+                                        <a href="{{route('editcatatanperkembangan',['pemerlu'=>$p->id,'bulan'=>2])}}" class="btn btn-primary btn-md">2</a>
+                                        <a href="{{route('editcatatanperkembangan',['pemerlu'=>$p->id,'bulan'=>3])}}" class="btn btn-primary btn-md">3</a>
+                                        <a href="{{route('editcatatanperkembangan',['pemerlu'=>$p->id,'bulan'=>4])}}" class="btn btn-primary btn-md">4</a>
                                     </td>
 									
 									<td>
@@ -55,4 +56,5 @@
 										</div>
 									</td>
 								</tr>
+							@endforeach
  @endsection

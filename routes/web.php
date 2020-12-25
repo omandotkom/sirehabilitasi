@@ -117,18 +117,25 @@ Route::post('/hasilpengkajianawal/save/{id?}','App\Http\Controllers\PengkajianAw
 Route::get('/catatanperkembangan', function () {
     return view('perawat.catatanperkembangan');
 });
+Route::post('/catatanperkembangan/save/{id?}','App\Http\Controllers\CatatanPerkembanganController@store')->name('savecatatanperkembangan');
 Route::get('/tablehasilpengkajianawal', 
 // function () {
 //     return view('perawat.tablehasilpengkajianawal');
 // }
 'App\Http\Controllers\PengkajianAwalController@index'
 );
-Route::get('/tablecatatanperkembangan', function () {
-    return view('perawat.tablecatatanperkembangan');
-});
-Route::get('/edit-catatanperkembangan1', function () {
-    return view('perawat.edit-catatanperkembangan1');
-});
+Route::get('/tablecatatanperkembangan',
+// function () {
+//     return view('perawat.tablecatatanperkembangan');
+// }
+'App\Http\Controllers\CatatanPerkembanganController@index'
+)->name('indexcatatanperkembangan');
+Route::get('/edit-catatanperkembangan1/{pemerlu}/{bulan}', 
+// function () {
+//     return view('perawat.edit-catatanperkembangan1');
+// }
+'App\Http\Controllers\CatatanPerkembanganController@show'
+)->name('editcatatanperkembangan');
 Route::get('/edit-catatanperkembangan2', function () {
     return view('perawat.edit-catatanperkembangan2');
 });
@@ -298,9 +305,9 @@ Route::get('/dashboardadmin', function () {
 // Route::get('/tablehasilpengkajianawal', function () {
 //     return view('admin.tablehasilpengkajianawal');
 // });
-Route::get('/tablecatatanperkembangan', function () {
-    return view('admin.tablecatatanperkembangan');
-});
+// Route::get('/tablecatatanperkembangan', function () {
+//     return view('admin.tablecatatanperkembangan');
+// });
 
 /* admin buat akun pegawai */
 Route::get('/buatakunpegawai', function () {

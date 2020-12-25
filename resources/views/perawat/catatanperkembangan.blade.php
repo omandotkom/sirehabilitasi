@@ -36,17 +36,18 @@
 											
 											
 										</div>
-										<form>
+										<form action="{{route('savecatatanperkembangan')}}" method="post">
+											@csrf
 										<div class="form-group row">
-												<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+												<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control" type="text" placeholder="Johnny Brown">
+													<input class="form-control" name="pemerlulayanan_id" type="text" placeholder="Johnny Brown">
 												</div>
 											</div>
 										<div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Bulan Ke</label>
 												<div class="col-sm-12 col-md-10">
-													<select class="custom-select col-12">
+													<select name="bulan" class="custom-select col-12">
 														<option selected="">Pilih</option>
 														<option value="1">1</option>
 														<option value="2">2</option>
@@ -58,23 +59,23 @@
 											<div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Tanggal Pemeriksaan</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control date-picker" placeholder="Select Date" type="text">
+													<input name="tanggalpemeriksaan" class="form-control date-picker" placeholder="Select Date" type="text">
 												</div>
 											</div>
                                             <div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Berat Badan</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control" type="text" placeholder="">
+													<input name="beratbadan" class="form-control" type="text" placeholder="">
 												</div>
 											</div>
                                             
                                                 <div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Tanda-tanda vital</label>
 												<div class="col-sm-12 col-md-10">
-													<select class="custom-select col-12">
+													<select name="tandavital" class="custom-select col-12">
 														<option selected="">Pilih</option>
-														<option value="1">Stabil</option>
-														<option value="2">Tidak Stabil</option>
+														<option value="stabil">Stabil</option>
+														<option value="tidakstabil">Tidak Stabil</option>
 													
 													</select>
 												</div>
@@ -85,20 +86,20 @@
 											<div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Masalah Kesehatan dan Diagnosa Medis</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control" type="text" placeholder="">
+													<input name="masalahkesehatan" class="form-control" type="text" placeholder="">
 												</div>
 											</div>
 											
 											<div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Rekomendasi</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control" type="text" placeholder="">
+													<input name="rekomendasi" class="form-control" type="text" placeholder="">
 												</div>
 											</div>
 											<div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Rujukan</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control" type="text" placeholder="">
+													<input name="rujukan" class="form-control" type="text" placeholder="">
 												</div>
 											</div>
 											<div class="btn-list">												
