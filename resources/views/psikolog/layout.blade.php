@@ -156,7 +156,7 @@
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
                     <li>
-						<a href="{{ url('/dashboardperawat') }}" class="dropdown-toggle no-arrow">
+						<a href="{{ url('/dashboardpsikolog') }}" class="dropdown-toggle no-arrow">
 							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
 					</li>
@@ -166,7 +166,7 @@
 							<span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
 						</a>
 						<ul class="submenu">
-                        	<li><a href="{{ url('/hasilpengkajianawal') }}">Form Hasil Asesmen</a></li>
+                        	<li><a href="{{ url('/asesmenpsikolog') }}">Asesmen</a></li>
 							
 													
 						</ul>
@@ -176,8 +176,8 @@
 							<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
 						</a>
 						<ul class="submenu">
-                       <li><a href="{{ url('/tablehasilpengkajianawal') }}">Data Hasil Pengkajian Awal</a></li>
-                       <li><a href="{{ url('/tablecatatanperkembangan') }}">Data Catatan Perkembangan</a></li>
+                       <li><a href="{{ url('/tablehasilasesmen') }}">Hasil Asesmen</a></li>
+                       
                      
 						</ul>
 					</li>
@@ -188,11 +188,11 @@
 		</div>
 	</div>
 	<div class="mobile-menu-overlay"></div>
-        @yield('body'
+        @yield('body')
 	<!-- js -->
 	<script src="{{asset('vendors/scripts/core.js')}}"></script>
 	<script src="{{asset('vendors/scripts/script.min.js')}}"></script>
 	<script src="{{asset('vendors/scripts/process.js')}}"></script>
 	<script src="{{asset('vendors/scripts/layout-settings.js')}}"></script>
 </body>
-</html>
+</html> 

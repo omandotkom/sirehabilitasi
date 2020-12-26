@@ -323,3 +323,17 @@ Route::get('/editakunpegawai', function () {
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+Route::get('/dashboardpsikolog', function () {
+    return view('psikolog.dashboardpsikolog');
+});
+Route::get('/asesmenpsikolog', function () {
+    return view('psikolog.asesmenpsikolog');
+});
+Route::get('/tablehasilasesmen', function () {
+    return view('psikolog.tablehasilasesmen');
+});
+Route::get('/editasesmenpsikolog', function () {
+    return view('psikolog.editasesmenpsikolog');
+});
