@@ -49,14 +49,14 @@
                                         <div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Tanggal Asesmen</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control date-picker" placeholder="Select Date" type="text">
+													<input class="form-control date-picker" name="tanggalasesmen" placeholder="Select Date" type="text">
 												</div>
 										</div>
 
 										<div class="form-group row">
-												<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+												<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control" type="text" placeholder="Johnny Brown">
+													<input class="form-control" name="pemerlulayanan_Id" type="text" placeholder="Johnny Brown">
 												</div>
 										</div>
 
@@ -65,17 +65,17 @@
 										<h9>Case History</h9></hr>
 						                <div class="form-group">
 						                    	<label>a. Pengalaman Masa Kecil</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea  name="pengalaman" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>b. Riwayat Penggunaan Napza</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="riwayatnapza" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>c. Faktor Penyebab Penggunaan Napza </label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="penyebabnapza" class="form-control"></textarea>
 						                </div>
 
                                         <h9>d. Perilaku Menyimpang</h9>
@@ -92,104 +92,104 @@
                                                 <tr>
                                                 <td>Pencurian</td>
                                                 <td>
-                                                    <input type="checkbox" name="ya[]" value=""> <br />
+                                                    <input type="checkbox" name="c_pencurian[]" value="ya"> <br />
 												</td>
                                                 <td>
-                                                    <input type="checkbox" name="tidak[]" value=""> <br />
+                                                    <input type="checkbox" name="c_pencurian[]" value="tidak"> <br />
                                                 </td>
                                                 <td>
-                                                <textarea name="input" cols="50" rows="2"></textarea><br>
+                                                <textarea name="n_pencurian" cols="50" rows="2"></textarea><br>
                                                 </td>
                                                 </tr>
 
                                                 <tr>
                                                 <td>Penjambretan/Perampokan</td>
                                                 <td>
-                                                    <input type="checkbox" name="ya[]" value=""> <br />
+                                                    <input type="checkbox" name="c_perampokan[]" value="ya"> <br />
 												</td>
                                                 <td>
-                                                    <input type="checkbox" name="tidak[]" value=""> <br />
+                                                    <input type="checkbox" name="c_perampokan[]" value="tidak"> <br />
                                                 </td>
                                                 <td>
-                                                <textarea name="input" cols="50" rows="2"></textarea><br>
+                                                <textarea name="n_perampokan" cols="50" rows="2"></textarea><br>
                                                 </td>
                                                 </tr>
 
                                                 <tr>
                                                 <td>Tawuran</td>
                                                 <td>
-                                                    <input type="checkbox" name="ya[]" value=""> <br />
+                                                    <input type="checkbox" name="c_tawuran[]" value="ya"> <br />
 												</td>
                                                 <td>
-                                                    <input type="checkbox" name="tidak[]" value=""> <br />
+                                                    <input type="checkbox" name="c_tawuran[]" value="tidak"> <br />
                                                 </td>
                                                 <td>
-                                                <textarea name="input" cols="50" rows="2"></textarea><br>
+                                                <textarea name="n_tawuran" cols="50" rows="2"></textarea><br>
                                                 </td>
                                                 </tr>
 
                                                 <tr>
                                                 <td>Seks Bebas/Tawuran</td>
                                                 <td>
-                                                    <input type="checkbox" name="ya[]" value=""> <br />
+                                                    <input type="checkbox" name="c_seksbebas[]" value="ya"> <br />
 												</td>
                                                 <td>
-                                                    <input type="checkbox" name="tidak[]" value=""> <br />
+                                                    <input type="checkbox" name="c_seksbebas[]" value="tidak"> <br />
                                                 </td>
                                                 <td>
-                                                <textarea name="input" cols="50" rows="2"></textarea><br>
+                                                <textarea name="n_seksbebas" cols="50" rows="2"></textarea><br>
                                                 </td>
                                                 </tr>
 
                                                 <tr>
                                                 <td>Penyalahgunaan Napza</td>
                                                 <td>
-                                                    <input type="checkbox" name="ya[]" value=""> <br />
+                                                    <input type="checkbox" name="c_napza[]" value="ya"> <br />
 												</td>
                                                 <td>
-                                                    <input type="checkbox" name="tidak[]" value=""> <br />
+                                                    <input type="checkbox" name="c_napza[]" value="tidak"> <br />
                                                 </td>
                                                 <td>
-                                                <textarea name="input" cols="50" rows="2"></textarea><br>
+                                                <textarea name="n_napza" cols="50" rows="2"></textarea><br>
                                                 </td>
                                                 </tr>
 
                                                 <tr>
                                                 <td>Penyalahgunaan Miras/alkohol</td>
                                                 <td>
-                                                    <input type="checkbox" name="ya[]" value=""> <br />
+                                                    <input type="checkbox" name="c_alkohol[]" value="ya"> <br />
 												</td>
                                                 <td>
-                                                    <input type="checkbox" name="tidak[]" value=""> <br />
+                                                    <input type="checkbox" name="c_alkohol[]" value="tidak"> <br />
                                                 </td>
                                                 <td>
-                                                <textarea name="input" cols="50" rows="2"></textarea><br>
+                                                <textarea name="n_alkohol" cols="50" rows="2"></textarea><br>
                                                 </td>
                                                 </tr>
 
                                                 <tr>
                                                 <td>Mengedarkan/ Menjual Napza</td>
                                                 <td>
-                                                    <input type="checkbox" name="ya[]" value=""> <br />
+                                                    <input type="checkbox" name="c_menjualnapza[]" value="ya"> <br />
 												</td>
                                                 <td>
-                                                    <input type="checkbox" name="tidak[]" value=""> <br />
+                                                    <input type="checkbox" name="c_menjualnapza[]" value="tidak"> <br />
                                                 </td>
                                                 <td>
-                                                <textarea name="input" cols="50" rows="2"></textarea><br>
+                                                <textarea name="n_menjualnapza" cols="50" rows="2"></textarea><br>
                                                 </td>
                                                 </tr>
 
                                                 <tr>
                                                 <td>Pengalaman di Penjara</td>
                                                 <td>
-                                                    <input type="checkbox" name="ya[]" value=""> <br />
+                                                    <input type="checkbox" name="c_penjara[]" value="ya"> <br />
 												</td>
                                                 <td>
-                                                    <input type="checkbox" name="tidak[]" value=""> <br />
+                                                    <input type="checkbox" name="c_penjara[]" value="tidak"> <br />
                                                 </td>
                                                 <td>
-                                                <textarea name="input" cols="50" rows="2"></textarea><br>
+                                                <textarea name="n_penjara" cols="50" rows="2"></textarea><br>
                                                 </td>
                                                 </tr>
 
@@ -200,80 +200,80 @@
                                         <h9>e. Riwayat Kesehatan Jiwa</h9>
                                         <div class="form-group">
 						                    	<label>1. Percobaan bunuh diri/ self harm/ menyakiti diri sendiri?</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="percobaanbunuhdiri"  class="form-control"></textarea>
 						                </div>
 										
                                         <div class="form-group">
 						                    	<label>2. Riwayat Pemeriksaan Psikiater</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="riwayatpemeriksaanpsikiater" class="form-control"></textarea>
 						                </div>
 
                                         
                                         <div class="form-group">
 						                    	<label>2. Hubungan PPKS </label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="hubunganppks" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>3. Potensi yang dimiliki</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="potensiyangdimiliki" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>4. Kesiapan mengikuti Rehabilitasi</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="kesiapanrehabilitasi" class="form-control"></textarea>
 						                </div>
 
                                         <h9>B. Psikodiagnostik</h9>
                                         <div class="form-group">
 						                    	<label>1. Hasil Beck Anxiety Inventory (BAI)</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="bai" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>2. Hasil Beck Depression Inventory (BDI)</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="bdi" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>3. Hasil State-Trait Anger Expression Inventory (STAXI)</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="staxi" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>4. Hasil Tes Grafis</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="tesgrafis" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>5. Hasil Tes Self-Reporting Questionnaire (SRQ)</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea class="form-control" name="srq"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>6. Skala Well-being</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="skalawellbeing" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>7. Hasil Tes Intelegensi</label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="intelegensi" class="form-control"></textarea>
 						                </div>
 
                                         <h9>Rencana Intervensi</h9>
                                         <div class="form-group">
 						                    	<label>a. Rumusan Masalah    </label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="rumusanmasalah" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>b. Kesimpulan  </label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="kesimpulan" class="form-control"></textarea>
 						                </div>
 
                                         <div class="form-group">
 						                    	<label>c. Rencana Intervensi  </label>
-							                    <textarea class="form-control"></textarea>
+							                    <textarea name="rencanaintervensi" class="form-control"></textarea>
 						                </div>
 
 
