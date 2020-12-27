@@ -327,13 +327,21 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboardpsikolog', function () {
     return view('psikolog.dashboardpsikolog');
-});
+})->name('dashboardpsikolog');
 Route::get('/asesmenpsikolog', function () {
     return view('psikolog.asesmenpsikolog');
 });
-Route::get('/tablehasilasesmen', function () {
-    return view('psikolog.tablehasilasesmen');
-});
-Route::get('/editasesmenpsikolog', function () {
-    return view('psikolog.editasesmenpsikolog');
-});
+Route::get('/tablehasilasesmen', 
+// function () {
+//     return view('psikolog.tablehasilasesmen');
+// }
+'App\Http\Controllers\AsesmenPsikologController@index'
+);
+Route::get('/editasesmenpsikolog/{id}', 
+// function () {
+//     return view('psikolog.editasesmenpsikolog');
+// }
+'App\Http\Controllers\AsesmenPsikologController@show'
+)->name('editasesmenpsikologi');
+Route::post('/asesmenpsikolog/save/{id?}','App\Http\Controllers\AsesmenPsikologController@store')->name('saveasesmenpsikolog');
+Route::get('/asesmenpsikolog/delete/{id}','App\Http\Controllers\AsesmenPsikologController@delete')->name('deleteasesmenpsikolog');

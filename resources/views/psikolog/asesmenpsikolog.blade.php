@@ -29,8 +29,8 @@
 						</div>
                         </div>
 
-                        <form>
-                        
+                        <form action="{{route('saveasesmenpsikolog')}}" method="post">
+                        @csrf
                       
 							
 							
@@ -44,7 +44,6 @@
 												<!--<a href="#basic-form1" class="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-code"></i> Source Code</a> -->
 											</div>
 										</div>
-										<form>
 
                                         <div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Tanggal Asesmen</label>
@@ -56,7 +55,7 @@
 										<div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu</label>
 												<div class="col-sm-12 col-md-10">
-													<input class="form-control" name="pemerlulayanan_Id" type="text" placeholder="Johnny Brown">
+													<input class="form-control" name="pemerlulayanan_id" type="text" placeholder="Johnny Brown">
 												</div>
 										</div>
 
@@ -275,12 +274,8 @@
 						                    	<label>c. Rencana Intervensi  </label>
 							                    <textarea name="rencanaintervensi" class="form-control"></textarea>
 						                </div>
-
-
-
-
                                         
-                                       
+                        
 											</div>
 											<div class="btn-list">												
 																<input class="btn btn-primary" type="submit" value="Simpan">								
