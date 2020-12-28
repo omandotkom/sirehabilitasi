@@ -21,7 +21,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="pd-20 card-box mb-30">
+			<div id="printable" class="pd-20 card-box mb-30">
 				<div class="clearfix">
 					<div class="pull-left">
 						<h4 class="text-blue h4">Data Pemerlu Pelayanan Kesejahteraan Sosial</h4>
@@ -184,13 +184,32 @@
 
 
 
-					<div class="btn-list">
+					<div id="submitButton" class="btn-list">
 						<input class="btn btn-primary" type="submit" value="Simpan">
 					</div>
-					<div class="btn-list">
-						<input class="btn btn-primary" type="submit" value="Cetak">
+					<div id="printButton" class="btn-list">
+						<input class="btn btn-primary" onclick="printDiv('printable');" type="submit" value="Cetak">
 					</div>
+					<script>
+						function printDiv(divName) {
+							removeElement('submitButton');
+							removeElement('printButton');
+							var printContents = document.getElementById(divName).innerHTML;
+							var originalContents = document.body.innerHTML;
 
+							document.body.innerHTML = printContents;
+
+							window.print();
+
+							document.body.innerHTML = originalContents;
+						}
+
+						function removeElement(elementId) {
+							// Removes an element from the document
+							var element = document.getElementById(elementId);
+							element.parentNode.removeChild(element);
+						}
+					</script>
 			</div>
 		</div>
 	</div>
