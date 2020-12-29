@@ -60,9 +60,7 @@ Route::post(
 Route::get('/tableriwayat','App\Http\Controllers\RiwayatPemerluLayananController@index')->name('indexriwayatpemerlulayanan');
 Route::get(
     '/tableadministrasi',
-    // function () {
-    //     return view('pegawaiasesmen.tableadministrasi');
-    // }
+    
     'App\Http\Controllers\AdministrasiController@index'
 )->name('administrasi');
 
@@ -205,7 +203,7 @@ Route::get('/dashboardpsikolog', function () {
 Route::get('/asesmenpsikolog', function () {
     return view('psikolog.asesmenpsikolog');
 });
-Route::get('/tablehasilasesmen', 'App\Http\Controllers\AsesmenPsikologController@index');
+Route::get('/tablehasilasesmen', 'App\Http\Controllers\AsesmenPsikologController@index')->name('indexhasilasesmen');
 Route::get('/editasesmenpsikolog/{id}', 'App\Http\Controllers\AsesmenPsikologController@show'
 )->name('editasesmenpsikologi');
 Route::post('/asesmenpsikolog/save/{id?}','App\Http\Controllers\AsesmenPsikologController@store')->name('saveasesmenpsikolog');

@@ -58,7 +58,7 @@
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
 						<form action="{{route('logout')}}" method="post">
 							@csrf
-						<input type="submit" class="dropdown-item" ><i class="dw dw-logout"></i> Log Out</input>
+							<a class="dropdown-item" onclick="this.closest('form').submit();return false;" type="submit"><i class="dw dw-logout"></i> Log Out</a>
 						</form>
 					</div>
 				</div>

@@ -85,7 +85,7 @@ class AsesmenPsikologController extends Controller
         $ps->kesimpulan = $request->kesimpulan;
         $ps->rencanaintervensi = $request->rencanaintervensi;
         $ps->save();
-        return back();
+        return redirect()->route('indexhasilasesmen');
     }
     public function delete($id){
         AsesmenPsikolog::where('id',$id)->delete();

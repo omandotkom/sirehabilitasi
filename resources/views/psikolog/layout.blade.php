@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
@@ -25,26 +26,30 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
 	</script>
 </head>
+
 <body>
-	
+
 
 	<div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
 			<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
 			<div class="header-search">
-				
+
 			</div>
 		</div>
 		<div class="header-right">
-			
-			
+
+
 			<div class="user-info-dropdown">
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -54,10 +59,14 @@
 						<span class="user-name">Nama</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						
+
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
-						
-						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+
+
+						<form action="{{route('logout')}}" method="post">
+							@csrf
+							<a class="dropdown-item" onclick="this.closest('form').submit();return false;" type="submit"><i class="dw dw-logout"></i> Log Out</a>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -145,7 +154,7 @@
 	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="index.html">
-				<img src="vendors/images/deskapp-logo-kemensos.png" >
+				<img src="vendors/images/deskapp-logo-kemensos.png">
 				<img src="vendors/images/deskapp-logo-kemensos2.png">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
@@ -155,20 +164,20 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-                    <li>
+					<li>
 						<a href="{{ url('/dashboardpsikolog') }}" class="dropdown-toggle no-arrow">
 							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
 					</li>
-					
+
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
 						</a>
 						<ul class="submenu">
-                        	<li><a href="{{ url('/asesmenpsikolog') }}">Asesmen</a></li>
-							
-													
+							<li><a href="{{ url('/asesmenpsikolog') }}">Asesmen</a></li>
+
+
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -176,23 +185,25 @@
 							<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
 						</a>
 						<ul class="submenu">
-                       <li><a href="{{ url('/tablehasilasesmen') }}">Hasil Asesmen</a></li>
-                       
-                     
+							<li><a href="{{ url('/tablehasilasesmen') }}">Hasil Asesmen</a></li>
+
+
 						</ul>
 					</li>
-					
-					
+
+
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="mobile-menu-overlay"></div>
-        @yield('body')
+	@yield('body')
 	<!-- js -->
 	<script src="{{asset('vendors/scripts/core.js')}}"></script>
 	<script src="{{asset('vendors/scripts/script.min.js')}}"></script>
+	<script src="{{asset('vendors/scripts/print.js')}}"></script>
 	<script src="{{asset('vendors/scripts/process.js')}}"></script>
 	<script src="{{asset('vendors/scripts/layout-settings.js')}}"></script>
 </body>
-</html> 
+
+</html>
