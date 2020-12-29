@@ -36,7 +36,7 @@ class LaporanPerkembanganController extends Controller
             $lap->kendala = $request->kendala;
             $lap->rencana = $request->rencana;
             $lap->save();
-            return back();        
+            return redirect()->route('indexlaporanperkembangan');
     }
     public function show($pemerlu,$bulan){
         $lap = LaporanPerkembangan::where('pemerlulayanan_id',$pemerlu)->where('bulanlaporan',$bulan)->first();

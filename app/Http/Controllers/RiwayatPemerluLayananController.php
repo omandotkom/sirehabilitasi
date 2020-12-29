@@ -51,7 +51,7 @@ class RiwayatPemerluLayananController extends Controller
         }
         
         $data->save();
-        return back();
+        return redirect()->route('indexriwayatpemerlulayanan');
     }
     public function byPemerlu($id){
         $pemerlu = modelpemerlupelayanan::findOrFail($id);

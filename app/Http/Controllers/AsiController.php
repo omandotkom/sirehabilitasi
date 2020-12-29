@@ -30,7 +30,7 @@ class AsiController extends Controller
         $asi->keterangandiagnosis = $request->keterangandiagnosis;
         $asi->diagnosislainnya = $request->diagnosislainnya;
         $asi->save();
-        return back();
+        return redirect()->route('indexasi');
     }
     public function show($id)
     {

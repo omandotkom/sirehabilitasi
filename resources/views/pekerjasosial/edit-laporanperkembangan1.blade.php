@@ -23,7 +23,7 @@
 
 
 
-			<div class="pd-20 card-box mb-30">
+			<div id="printArea" class="pd-20 card-box mb-30">
 				<div class="clearfix">
 					<div class="pull-left">
 						<h4 class="text-blue h4">Laporan Perkembangan</h4>
@@ -180,13 +180,13 @@
 						</label>
 						<textarea name="rencana" class="form-control">{{$laporan->rencana}}</textarea>
 					</div>
-
-
-
-					<div class="btn-list">
+					<div id="submitButton" class="btn-list">
 						<input class="btn btn-primary" type="submit" value="Simpan">
 					</div>
+					<div id="printButton" class="btn-list">
+						<input class="btn btn-primary" type="button" onclick="printDiv('printArea')" value="Cetak">
+					</div>
 				</form>
-
+			</div>
 
 				@endsection

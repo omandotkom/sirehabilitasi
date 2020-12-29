@@ -45,7 +45,7 @@ class RencanaPelayananController extends Controller
         }
 
         $ren->save();
-        return back();
+        return redirect()->route('indexrencanapelayanan');
     }
     public function index()
     {
@@ -56,7 +56,8 @@ class RencanaPelayananController extends Controller
             'pemerlu' => $pemerlu
         ]);
     }
-    public function delete($id){
+    public function delete($id)
+    {
         $pem =  RencanaPelayanan::findOrFail($id);
         $pem->delete();
         return back();

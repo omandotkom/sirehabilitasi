@@ -33,7 +33,7 @@ class AssistController extends Controller
         $j->jvalue = $request->jvalue;
         $as->j = json_encode($j);
         $as->save();
-        return back();
+        return redirect()->route('indexassist');
     }
     public function index()
     {

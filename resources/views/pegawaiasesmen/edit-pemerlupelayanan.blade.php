@@ -188,28 +188,9 @@
 						<input class="btn btn-primary" type="submit" value="Simpan">
 					</div>
 					<div id="printButton" class="btn-list">
-						<input class="btn btn-primary" onclick="printDiv('printable');" type="submit" value="Cetak">
+						<input class="btn btn-primary" onclick="printDiv('printable');" type="button" value="Cetak">
 					</div>
-					<script>
-						function printDiv(divName) {
-							removeElement('submitButton');
-							removeElement('printButton');
-							var printContents = document.getElementById(divName).innerHTML;
-							var originalContents = document.body.innerHTML;
-
-							document.body.innerHTML = printContents;
-
-							window.print();
-
-							document.body.innerHTML = originalContents;
-						}
-
-						function removeElement(elementId) {
-							// Removes an element from the document
-							var element = document.getElementById(elementId);
-							element.parentNode.removeChild(element);
-						}
-					</script>
+				
 			</div>
 		</div>
 	</div>

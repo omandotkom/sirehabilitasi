@@ -29,7 +29,7 @@ class PengkajianAwalController extends Controller
         $p->darahrutin = $request->darahrutin;
 
         $p->save();
-        return back();
+        return redirect()->route('indexhasilpengkajianawal');
     }
     public function index(){
         $pemerlu = DB::table('tabelpemerlupelayanan')->join('tabelpengkajianawal','tabelpemerlupelayanan.id','=','tabelpengkajianawal.pemerlulayanan_id')

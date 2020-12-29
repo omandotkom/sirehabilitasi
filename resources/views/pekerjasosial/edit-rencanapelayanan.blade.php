@@ -1,35 +1,35 @@
-@extends('pekerjasosial.layout') 
+@extends('pekerjasosial.layout')
 
 @section('body')
 <div class="main-container">
-		<div class="pd-ltr-20 xs-pd-20-10">
-			<div class="min-height-100px">
-				<div class="page-header">
-					<div class="row">
-						<div class="col-md-6 col-sm-12">
-							<div class="title">
-								<h4>Form</h4>
-							</div>
-							<nav aria-label="breadcrumb" role="navigation">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index-pekerjasosial.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Form Rencana Pelayanan</li>
-								</ol>
-							</nav>
+	<div class="pd-ltr-20 xs-pd-20-10">
+		<div class="min-height-100px">
+			<div class="page-header">
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="title">
+							<h4>Form</h4>
 						</div>
-						
+						<nav aria-label="breadcrumb" role="navigation">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index-pekerjasosial.html">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Form Rencana Pelayanan</li>
+							</ol>
+						</nav>
 					</div>
-				</div>
-				
-							
 
-					<div class="pd-20 card-box mb-30">
+				</div>
+			</div>
+
+
+			<div id="printArea">
+				<div class="pd-20 card-box mb-30">
 					<div class="clearfix">
 						<div class="pull-left">
 							<h4 class="text-blue h4">Rencana Pelayanan</h4>
 						</div>
 					</div>
-					<form action="{{route('saverencanapelayanan',$rencana->id)}}" method="post" enctype="multipart/form-data" >
+					<form action="{{route('saverencanapelayanan',$rencana->id)}}" method="post" enctype="multipart/form-data">
 						@csrf
 						<h9>A. Identitas Residen</h9>
 						<div class="form-group row">
@@ -52,14 +52,14 @@
 						</div>
 						<h9>B. Latar Belakang Masalah</h9>
 
-						<div class="form-group">
+						<div class="form-group removable">
 							<label>Genomap Residen</label>
-                            <input type="file" name="genomap" class="form-control-file form-control height-auto">
-                            @php
-                            $rencana->genomap = base64_encode($rencana->genomap);
-                            $rencana->fokus = base64_encode($rencana->fokus);
-                            @endphp
-                            <a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$rencana->genomap)}}">Unduh</a>
+							<input type="file" name="genomap" class="form-control-file form-control height-auto">
+							@php
+							$rencana->genomap = base64_encode($rencana->genomap);
+							$rencana->fokus = base64_encode($rencana->fokus);
+							@endphp
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$rencana->genomap)}}">Unduh</a>
 						</div>
 						<div class="form-group">
 							<label>1. Riwayat Keluarga</label>
@@ -97,13 +97,13 @@
 						<h9>D. Potensi dan Sumber-Sumber Yang Tersedia</h9>
 						<div class="form-group">
 							<label>1. Internal</label>
-							<textarea name="potensiinternal"  class="form-control">{{$rencana->potensiinternal}}</textarea>
+							<textarea name="potensiinternal" class="form-control">{{$rencana->potensiinternal}}</textarea>
 						</div>
 						<div class="form-group">
 							<label>2. Eksternal</label>
 							<textarea name="potensieksternal" class="form-control">{{$rencana->potensieksternal}}</textarea>
 						</div>
-						
+
 						<h9>E. Analisa Masalah</h9>
 						<div class="form-group">
 							<label>1. Faktor Genetik</label>
@@ -122,10 +122,12 @@
 							<textarea name="permasalahankeluarga" class="form-control">{{$rencana->permasalahankeluarga}}</textarea>
 						</div>
 
-						
+
 						<div class="form-group">
-						    <label><h9>F. Rumusan Masalah</h9></label>
-							<textarea name="rumusanmasalah"  class="form-control">{{$rencana->rumusanmasalah}}</textarea>
+							<label>
+								<h9>F. Rumusan Masalah</h9>
+							</label>
+							<textarea name="rumusanmasalah" class="form-control">{{$rencana->rumusanmasalah}}</textarea>
 						</div>
 
 
@@ -134,30 +136,35 @@
 							<label>1. Waktu Layanan</label>
 							<textarea name="waktulayanan" class="form-control">{{$rencana->waktulayanan}}</textarea>
 						</div>
-						<div class="form-group">
-							<label><h9>2. Fokus Penanganan</h9></label>
-                            <input type="file" name="fokus" class="form-control-file form-control height-auto" name="suratperjanjian">
-                            <a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$rencana->fokus)}}">Unduh</a>
+						<div class="form-group removable">
+							<label>
+								<h9>2. Fokus Penanganan</h9>
+							</label>
+							<input type="file" name="fokus" class="form-control-file form-control height-auto" name="suratperjanjian">
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$rencana->fokus)}}">Unduh</a>
 						</div>
-						<div class="btn-list">												
-							<input class="btn btn-primary" type="submit" value="Simpan">								
+						<div id="submitButton" class="btn-list">
+							<input class="btn btn-primary" type="submit" value="Simpan">
 						</div>
-	
+						<div id="printButton" class="btn-list">
+							<input onclick="printDiv('printArea')" class="btn btn-primary" type="button" value="Cetak">
+						</div>
 
-						</div>
-						</div>
+				</div>
 			</div>
-						
-						</form>
+		</div>
+	</div>
 
-			
-
-			
-						
-						
-						
+	</form>
 
 
 
 
-@endsection
+
+
+
+
+
+
+
+	@endsection

@@ -46,7 +46,7 @@ class WhoqolController extends Controller
             $domain4->c = $request->domain4c;
             $w->domain4 = json_encode($domain4);
             $w->save();
-            return back();
+            return redirect()->route('indexwhoqol');
     }
     public function show($id){
         $w = Whoqol::findOrFail($id);

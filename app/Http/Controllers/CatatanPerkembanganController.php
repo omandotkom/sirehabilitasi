@@ -30,7 +30,7 @@ class CatatanPerkembanganController extends Controller
         if ($edit){
             return redirect()->route('indexcatatanperkembangan');
         }
-        return back();
+        return redirect()->route('indexcatatanperkembangan');
     }
     public function index(){
         // $pemerlu = DB::table('tabelpemerlupelayanan')->join('tabelcatatanperkembangan','tabelpemerlupelayanan.id','=','tabelcatatanperkembangan.pemerlulayanan_id')

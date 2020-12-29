@@ -38,7 +38,7 @@ class PemerluPelayananController extends Controller
         $m->tanggallahiribu = date('Y-m-d', strtotime($request->tanggallahiribu));
         $m->pekerjaanibu = $request->pekerjaanibu;
         $m->save();
-        return back();
+        return redirect()->route('indexpemerlulayanan');
     }
     public function index(){
         $pemerlu = modelpemerlupelayanan::all();

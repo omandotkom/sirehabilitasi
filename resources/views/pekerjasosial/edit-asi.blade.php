@@ -29,7 +29,7 @@
 							<div class="pd-ltr-20 xs-pd-20-10">
 								<div class="min-height-200px">
 
-
+								<div id="printArea">
 									<div class="pd-20 card-box mb-30">
 										<div class="clearfix">
 											<div class="pull-left">
@@ -84,63 +84,63 @@
 															$ps = json_decode($asi->psikiatris);
 															@endphp
 															<td>
-																<input type="checkbox" @if(in_array('1',$med))checked @endif name="medis[]" value="1"> <br />
+																<input type="checkbox" @if(!is_null($med) && in_array('1',$med))checked @endif name="medis[]" value="1"> <br />
 															</td>
 															<td>
-																<input type="checkbox" @if(in_array('2',$med))checked @endif name="medis[]" value="2"> <br />
+																<input type="checkbox" @if(!is_null($med) && in_array('2',$med))checked @endif name="medis[]" value="2"> <br />
 															</td>
 															<td>
-																<input type="checkbox" @if(in_array('3',$med))checked @endif name="medis[]" value="3"> <br />
+																<input type="checkbox" @if(!is_null($med) && in_array('3',$med))checked @endif name="medis[]" value="3"> <br />
 															</td>
 															<td>
-																<input type="checkbox" @if(in_array('4',$med))checked @endif name="medis[]" value="4"> <br />
+																<input type="checkbox" @if(!is_null($med) && in_array('4',$med))checked @endif name="medis[]" value="4"> <br />
 															</td>
 															<td>
-																<input type="checkbox" @if(in_array('5',$med))checked @endif name="medis[]" value="5"> <br />
+																<input type="checkbox" @if(!is_null($med) && in_array('5',$med))checked @endif name="medis[]" value="5"> <br />
 															</td>
 															<td>
-																<input type="checkbox" name="medis[]" @if(in_array('6',$med))checked @endif value="6"> <br />
+																<input type="checkbox" name="medis[]" @if(!is_null($med) && in_array('6',$med))checked @endif value="6"> <br />
 															</td>
 															<td>
-																<input type="checkbox" name="medis[]" value="7" @if(in_array('7',$med))checked @endif> <br />
+																<input type="checkbox" name="medis[]" value="7" @if(!is_null($med) && in_array('7',$med))checked @endif> <br />
 															</td>
 															<td>
-																<input type="checkbox" name="medis[]" value="8" @if(in_array('8',$med))checked @endif> <br />
+																<input type="checkbox" name="medis[]" value="8" @if(!is_null($med) && in_array('8',$med))checked @endif> <br />
 															</td>
 															<td>
-																<input type="checkbox" name="medis[]" value="9" @if(in_array('9',$med))checked @endif> <br />
+																<input type="checkbox" name="medis[]" value="9" @if(!is_null($med) && in_array('9',$med))checked @endif> <br />
 															</td>
 														</tr>
 														<tr>
 															<td>Pekerjaan/Dukungan</td>
 															@for ($i = 1; $i <= 9; $i++) <td>
-																<input type="checkbox" @if(in_array($i,$pd))checked @endif name="pekerjaandukungan[]" value="{{$i}}"> <br />
+																<input type="checkbox" @if(!is_null($pd) && in_array($i,$pd))checked @endif name="pekerjaandukungan[]" value="{{$i}}"> <br />
 																</td>
-																@endfor
+															@endfor
 														</tr>
 
 														<tr>
 															<td>Napza</td>
 															@for ($i = 1; $i <= 9; $i++) <td>
-																<input type="checkbox" @if(in_array($i,$nap))checked @endif name="napza[]" value="{{$i}}"> <br />
+																<input type="checkbox" @if(!is_null($nap) && in_array($i,$nap))checked @endif name="napza[]" value="{{$i}}"> <br />
 																</td>
-																@endfor
+															@endfor
 
 														</tr>
 														<tr>
 															<td>Keluarga/Sosial</td>
 															@for ($i = 1; $i <= 9; $i++) <td>
-																<input type="checkbox" @if(in_array($i,$kl))checked @endif name="keluargasosial[]" value="{{$i}}"> <br />
+																<input type="checkbox" @if(!is_null($kl) && in_array($i,$kl))checked @endif name="keluargasosial[]" value="{{$i}}"> <br />
 																</td>
-															@endfor
+																@endfor
 														</tr>
 														<tr>
 															<td>Psikiatris</td>
 															@for ($i = 1; $i <= 9; $i++) <td>
-																<input type="checkbox" @if(in_array($i,$ps))checked @endif name="psikiatris[]" value="{{$i}}"> <br />
+																<input type="checkbox" @if(!is_null($ps) && in_array($i,$ps))checked @endif name="psikiatris[]" value="{{$i}}"> <br />
 																</td>
-															@endfor
-															
+																@endfor
+
 														</tr>
 														<tr>
 															<td colspan="1">Klien Memenuhi Kriteria Diagnosis Napza</td>
@@ -157,11 +157,15 @@
 
 														</tbody>
 												</table>
-												<div class="btn-list">
+												<div id="submitButton" class="btn-list">
 													<input class="btn btn-primary" type="submit" value="Simpan">
+												</div>
+												<div id="printButton" class="btn-list">
+													<input class="btn btn-primary" onclick="printDiv('printArea');" type="button" value="Cetak">
 												</div>
 											</div>
 									</div>
+								</div>
 								</div>
 							</div>
 							</form>

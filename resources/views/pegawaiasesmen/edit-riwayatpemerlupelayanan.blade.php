@@ -19,7 +19,7 @@
 					</div>
 				</div>
 			</div>
-
+		<div id="printArea">
 			<div class="pd-20 card-box mb-30">
 				<div class="clearfix">
 					<div class="pull-left">
@@ -70,12 +70,12 @@
 								<input class="form-control" value="{{$riwayat->pendidikannonformal}}" placeholder="Kursus/Organisasi/Prestasi" name="pendidikannonformal" type="text">
 							</div>
 						</div>
-
-						<div class="btn-list">
-							<input class="btn btn-primary" type="submit" value="Simpan">
+					</div>
+						<div id="submitButton" class="btn-list">
+							<input  class="btn btn-primary" type="submit" value="Simpan">
 						</div>
-						<div class="btn-list">
-							<input class="btn btn-primary" type="submit" value="Cetak">
+						<div id="printButton" class="btn-list">
+							<input  class="btn btn-primary" onclick="printDiv('printArea');" type="button" value="Cetak">
 						</div>
 
 
