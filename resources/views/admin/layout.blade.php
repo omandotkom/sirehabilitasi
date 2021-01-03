@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
@@ -25,26 +26,30 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
 	</script>
 </head>
+
 <body>
-	
+
 
 	<div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
 			<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
 			<div class="header-search">
-				
+
 			</div>
 		</div>
 		<div class="header-right">
-			
-			
+
+
 			<div class="user-info-dropdown">
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -54,7 +59,7 @@
 						<span class="user-name">{{Auth::user()->name}}</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						
+
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
 						<form action="{{route('logout')}}" method="post">
 							@csrf
@@ -147,7 +152,7 @@
 	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="index.html">
-				<img src="vendors/images/deskapp-logo-kemensos.png" >
+				<img src="vendors/images/deskapp-logo-kemensos.png">
 				<img src="vendors/images/deskapp-logo-kemensos2.png">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
@@ -157,71 +162,47 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-                    <li>
+					<li>
+						@if(Auth::user()->role == "admin")
 						<a href="/dashboardadmin" class="dropdown-toggle no-arrow">
 							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-					</li>
-                    <li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables Asesmen</span>
+						@elseif(Auth::user()->role == "asesmen")
+						<a href="/dashboardasesmen" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-						<ul class="submenu">
-							<li><a href="/tablepemerlupelayanan">Data Pemerlu Pelayanan</a></li>
-                            <li><a href="/tableriwayat">Data Riwayat Pemerlu Pelayanan</a></li>
-                            <li><a href="/tableadministrasi">Data Administrasi</a></li>
-                            
-						</ul>
-					</li>
-                    <li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables Perawat</span>
+						@elseif(Auth::user()->role == "perawat")
+						<a href="/dashboardperawat" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-						<ul class="submenu">
-							<li><a href="/tablehasilpengkajianawal">Data Hasil Pengkajian Awal</a></li>
-                            <li><a href="/tablecatatanperkembangan">Data Catatan Perkembangan</a></li>
-                            
-						</ul>
-					</li>
-					
-					
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables Peksos</span>
+						@elseif(Auth::user()->role == "psikolog")
+						<a href="/dashboardpsikolog" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-						<ul class="submenu">
-							<li><a href="/tableasi">Data ASI</a></li>
-                            <li><a href="/tableassist">Data ASSIST</a></li>
-                            <li><a href="/tablewhoqol">Data WHOQOL</a></li>
-                            <li><a href="/tablerencanapelayanan">Data Rencana Pelayanan</a></li>
-                            <li><a href="/tablelaporanperkembangan">Data Laporan Perkembangan</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Akun Pegawai</span>
+						@elseif(Auth::user()->role == "sosial")
+						<a href="/dashboardpekerjasosial" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-						<ul class="submenu">
-							<li><a href="/daftarakunpegawai">Daftar Akun Pegawai</a></li>
-							<li><a href="/buatakunpegawai">Buat Akun Pegawai</a></li>
-                           
-						</ul>
+						@endif
+					
 					</li>
-                    
-                    
-					
-					
+
+
+					@include('admin.sidebar')
+
+
 				</ul>
 			</div>
 		</div>
 	</div>
-	
-    <div class="mobile-menu-overlay"></div>
-        @yield('body')
+
+	<div class="mobile-menu-overlay"></div>
+	@yield('body')
 	<!-- js -->
 	<script src="{{asset('vendors/scripts/core.js')}}"></script>
 	<script src="{{asset('vendors/scripts/script.min.js')}}"></script>
 	<script src="{{asset('vendors/scripts/process.js')}}"></script>
 	<script src="{{asset('vendors/scripts/layout-settings.js')}}"></script>
 </body>
+
 </html>

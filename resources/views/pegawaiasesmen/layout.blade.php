@@ -163,34 +163,31 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-					<li>
-						<a href="{{ url('/dashboardasesmen') }}" class="dropdown-toggle no-arrow">
+				<li>
+						@if(Auth::user()->role == "admin")
+						<a href="/dashboardadmin" class="dropdown-toggle no-arrow">
 							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-					</li>
-
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
+						@elseif(Auth::user()->role == "asesmen")
+						<a href="/dashboardasesmen" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-						<ul class="submenu">
-							<li><a href="{{ url('/datapemerlupelayanan') }}">Data Pemerlu Pelayanan</a></li>
-							<li><a href="{{ url('/riwayatpemerlupelayanan') }}">Riwayat Pemerlu Pelayanan</a></li>
-							<li><a href="{{ url('/administrasi') }}">Administrasi</a></li>
-
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
+						@elseif(Auth::user()->role == "perawat")
+						<a href="/dashboardperawat" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-						<ul class="submenu">
-							<li><a href="{{ url('/tablepemerlupelayanan') }}">Data Pemerlu Pelayanan</a></li>
-							<li><a href="{{ url('/tableriwayat') }}">Riwayat Pemerlu Pelayanan</a></li>
-							<li><a href="{{ url('/tableadministrasi') }}">Administrasi</a></li>
-						</ul>
+						@elseif(Auth::user()->role == "psikolog")
+						<a href="/dashboardpsikolog" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@elseif(Auth::user()->role == "sosial")
+						<a href="/dashboardpekerjasosial" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@endif
+					
 					</li>
-
+					@include('admin.sidebar')
 
 				</ul>
 			</div>

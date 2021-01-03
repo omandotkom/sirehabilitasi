@@ -158,47 +158,32 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-                    <li>
+				<li>
+						@if(Auth::user()->role == "admin")
+						<a href="/dashboardadmin" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@elseif(Auth::user()->role == "asesmen")
+						<a href="/dashboardasesmen" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@elseif(Auth::user()->role == "perawat")
+						<a href="/dashboardperawat" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@elseif(Auth::user()->role == "psikolog")
+						<a href="/dashboardpsikolog" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@elseif(Auth::user()->role == "sosial")
 						<a href="/dashboardpekerjasosial" class="dropdown-toggle no-arrow">
 							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
+						@endif
+					
 					</li>
 					
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="/asi">Form ASI</a></li>
-							<li><a href="/assist">Form ASSIST</a></li>
-                            <li><a href="/whoqol">WHOQOL</a></li>
-                            <li><a href="/rencanapelayanan">Rencana Pelayanan</a></li>
-							<li><a href="/laporanperkembangan">Laporan Perkembangan</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables Peksos</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="/tableasi">Data ASI</a></li>
-                            <li><a href="/tableassist">Data ASSIST</a></li>
-                            <li><a href="/tablewhoqol">Data WHOQOL</a></li>
-                            <li><a href="/tablerencanapelayanan">Data Rencana Pelayanan</a></li>
-                            <li><a href="/tablelaporanperkembangan">Data Laporan Perkembangan</a></li>
-						</ul>
-					</li>
-                    <li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables Asesmen</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="/tablepemerlupelayanan">Data Pemerlu Pelayanan</a></li>
-                            <li><a href="/tableriwayat">Data Riwayat Pemerlu Pelayanan</a></li>
-                            <li><a href="/tableadministrasi">Data Administrasi</a></li>
-                            
-						</ul>
-					</li>
+					@include('admin.sidebar')
 					
 					
 				</ul>

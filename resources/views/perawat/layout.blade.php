@@ -158,32 +158,31 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-                    <li>
-						<a href="{{ url('/dashboardperawat') }}" class="dropdown-toggle no-arrow">
+				<li>
+						@if(Auth::user()->role == "admin")
+						<a href="/dashboardadmin" class="dropdown-toggle no-arrow">
 							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
 						</a>
-					</li>
+						@elseif(Auth::user()->role == "asesmen")
+						<a href="/dashboardasesmen" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@elseif(Auth::user()->role == "perawat")
+						<a href="/dashboardperawat" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@elseif(Auth::user()->role == "psikolog")
+						<a href="/dashboardpsikolog" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@elseif(Auth::user()->role == "sosial")
+						<a href="/dashboardpekerjasosial" class="dropdown-toggle no-arrow">
+							<span class="micon dw  dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						@endif
 					
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
-						</a>
-						<ul class="submenu">
-                        	<li><a href="{{ url('/hasilpengkajianawal') }}">Form Hasil Pengkajian Awal</a></li>
-							<li><a href="{{ url('/catatanperkembangan') }}">Form Catatan Perkembangan</a></li>
-													
-						</ul>
 					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
-						</a>
-						<ul class="submenu">
-                       <li><a href="{{ url('/tablehasilpengkajianawal') }}">Data Hasil Pengkajian Awal</a></li>
-                       <li><a href="{{ url('/tablecatatanperkembangan') }}">Data Catatan Perkembangan</a></li>
-                     
-						</ul>
-					</li>
+					@include('admin.sidebar')
 					
 					
 				</ul>
