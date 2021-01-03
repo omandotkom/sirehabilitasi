@@ -64,8 +64,8 @@ class AdministrasiController extends Controller
             $suratperjanjian = $request->file('suratperjanjian')->store('suratperjanjian');
             $adm->suratperjanjian = $suratperjanjian;
         }
-        if(isset($request->nama))
-            $adm->nama = $request->nama;
+        
+            $adm->nama = 'UNDEFINED';
         if (isset($request->pemerlulayanan_id))
             $adm->pemerlulayanan_id = $request->pemerlulayanan_id;
 

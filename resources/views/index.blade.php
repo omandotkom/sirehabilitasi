@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
@@ -24,12 +25,16 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
 	</script>
 </head>
+
 <body class="login-page">
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -38,7 +43,7 @@
 					<img src="vendors/images/deskapp-logo.svg" alt="">
 				</a>
 			</div>
-			
+
 		</div>
 	</div>
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
@@ -52,11 +57,19 @@
 						<div class="login-title">
 							<h2 class="text-center text-primary">Login SI Rehabilitasi</h2>
 						</div>
+						@if($errors->any())
+						<div class="row">
+						
+							<div class="alert alert-danger m-auto" role="alert">
+								Username atau Password salah
+							</div>
+						</div>
+						@endif
 						<form method="POST" action="{{route('login')}}">
 							@csrf
 							<div class="select-role">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								
+
 									</label>
 								</div>
 							</div>
@@ -72,22 +85,24 @@
 									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0">
-										
-									
-											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
-										
+
+
+										<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
+
 										<!-- <a class="btn btn-primary btn-lg btn-block" href="index.html">Sign In</a> -->
 									</div>
-									
-									
+
+
 								</div>
 							</div>
+
 						</form>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -98,4 +113,5 @@
 	<script src="{{asset('vendors/scripts/process.js')}}"></script>
 	<script src="{{asset('vendors/scripts/layout-settings.js')}}"></script>
 </body>
+
 </html>

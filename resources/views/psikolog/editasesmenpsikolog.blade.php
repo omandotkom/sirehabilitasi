@@ -61,7 +61,7 @@
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu</label>
                             <div class="col-sm-12 col-md-10">
-                                <input class="form-control" value="{{$ps->pemerlulayanan_id}}" name="pemerlulayanan_id" type="text" placeholder="Johnny Brown">
+                                <input class="form-control" value="{{$ps->pemerlulayanan_id}}" name="pemerlulayanan_id" type="text" placeholder="1">
                             </div>
                         </div>
 

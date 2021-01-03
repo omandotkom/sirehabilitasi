@@ -50,8 +50,6 @@
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 											
 												<a class="dropdown-item" href="{{route('showpemerlupelayanan',$p->id)}}"><i class="dw dw-edit2"></i>View and Edit</a>
-												<a class="dropdown-item" href="{{route('riwayatbypemerluid',$p->id)}}"><i class="dw dw-edit2"></i>Riwayat</a>
-												<a class="dropdown-item" href="{{route('administrasibypemerlu',$p->id)}}"><i class="dw dw-edit2"></i>Administrasi</a>
 												<a class="dropdown-item" href="{{route('deletepemerlupelayanan',$p->id)}}"><i class="dw dw-delete-3"></i> Delete</a>
 											</div>
 										</div>

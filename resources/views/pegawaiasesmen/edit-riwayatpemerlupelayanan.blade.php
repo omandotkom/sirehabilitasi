@@ -34,12 +34,11 @@
 					<form action="{{route('saveriwayatpemerlulayanan',$riwayat->id)}}" method="post">
 						@csrf
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu Layanan</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" placeholder="" value="{{$riwayat->pemerlu->nama}}" name="nama" type="text">
+								<input class="form-control" placeholder="" name="pemerlulayanan_id" value="{{$riwayat->pemerlulayanan_id}}" type="text">
 							</div>
 						</div>
-						<input type="hidden" value="{{$riwayat->pemerlulayanan_id}}" name="pemerlulayanan_id"/>
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">SD</label>
 							<div class="col-sm-12 col-md-10">

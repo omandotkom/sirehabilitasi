@@ -39,7 +39,7 @@
 					<div class="form-group row">
 						<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
 						<div class="col-sm-12 col-md-10">
-							<input class="form-control" name="nama" value="{{$pemerlu->nama}}" type="text" placeholder="Johnny Brown">
+							<input class="form-control" name="nama" value="{{$pemerlu->nama}}" type="text" placeholder="1">
 						</div>
 					</div>
 					<div class="form-group row">
@@ -105,7 +105,7 @@
 					<div class="form-group row">
 						<label class="col-sm-12 col-md-2 col-form-label">Nama Ayah</label>
 						<div class="col-sm-12 col-md-10">
-							<input name="namaayah" class="form-control" type="text" value="{{$pemerlu->namaayah}}" placeholder="Johnny Brown">
+							<input name="namaayah" class="form-control" type="text" value="{{$pemerlu->namaayah}}" placeholder="1">
 						</div>
 					</div>
 					<div class="form-group row">

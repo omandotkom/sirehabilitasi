@@ -48,7 +48,7 @@
 					<div class="form-group row">
 						<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu</label>
 						<div class="col-sm-12 col-md-10">
-							<input name="pemerlulayanan_id" class="form-control" type="text" placeholder="Johnny Brown">
+							<input name="pemerlulayanan_id" class="form-control" type="text" placeholder="1">
 						</div>
 					</div>
 					<div class="form-group row">

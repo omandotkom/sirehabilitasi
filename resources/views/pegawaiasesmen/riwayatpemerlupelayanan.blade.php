@@ -44,13 +44,12 @@
 								<form method="post" action="{{route('saveriwayatpemerlulayanan')}}">
 									@csrf
 									<div class="form-group row">
-										<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+										<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu Layanan</label>
 										<div class="col-sm-12 col-md-10">
-											<input class="form-control" placeholder="" value="{{$pemerlu->nama}}" name="nama" type="text">
+											<input class="form-control" placeholder="" name="pemerlulayanan_id" type="text">
 										</div>
 									</div>
-									<input type="hidden" name="pemerlulayanan_id" value="@if(isset($pemerlu)){{$pemerlu->id}}@endif"/>
-								
+									
 									<div class="form-group row">
 										<label class="col-sm-12 col-md-2 col-form-label">SD</label>
 										<div class="col-sm-12 col-md-10">

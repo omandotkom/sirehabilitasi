@@ -17,18 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-})->name('index');
+})->name('index')->middleware('guest');
 
 /*pegawai asesmen */
 Route::get('/dashboardasesmen', function () {
     return view('pegawaiasesmen.dashboard');
-})->name('dashboardasesmen')->name('asesmen');
+})->name('dashboardasesmen');
 Route::get('/datapemerlupelayanan', function () {
     return view('pegawaiasesmen.datapemerlupelayanan');
 });
 Route::get(
-    '/administrasi/{id?}',
-    'App\Http\Controllers\AdministrasiController@byPemerlu'
+    '/administrasi/',
+    // 'App\Http\Controllers\AdministrasiController@byPemerlu'
+    function(){
+        return  view('pegawaiasesmen.administrasi');
+    }
 )->name('administrasibypemerlu');
 Route::post(
     '/administrasi/save/{id?}',
@@ -37,17 +40,16 @@ Route::post(
 Route::get("/administrasi/download/{path}", 'App\Http\Controllers\AdministrasiController@download')->name('downloadadministrasi');
 Route::get("/administrasi/delete/{id}", 'App\Http\Controllers\AdministrasiController@delete')->name('deleteadministrasi');
 Route::get(
-    '/riwayatpemerlupelayanan/{id}',
-
-    // function () {
-    //     return view('pegawaiasesmen.riwayatpemerlupelayanan');
-    // }
-    'App\Http\Controllers\RiwayatPemerluLayananController@byPemerlu'
+    '/riwayatpemerlupelayanan/',
+    // 'App\Http\Controllers\RiwayatPemerluLayananController@byPemerlu'
+    function(){
+      return  view('pegawaiasesmen.riwayatpemerlupelayanan');
+    }
 )->name('riwayatbypemerluid');
 Route::post('/riwayatpemerlulayanan/save/{id?}', 'App\Http\Controllers\RiwayatPemerluLayananController@store')->name('saveriwayatpemerlulayanan');
 
 Route::get('/tablepemerlupelayanan','App\Http\Controllers\PemerluPelayananController@index')->name('indexpemerlulayanan');
-
+Route::get('/tablepemerlupelayanan/delete/{id}','App\Http\Controllers\RiwayatPemerluLayananController@delete')->name('deleteriwayatpemerlulayanan');
 Route::post(
     '/tablepemerlupelayanan/save/{id?}',
     'App\Http\Controllers\PemerluPelayananController@store'
@@ -91,7 +93,7 @@ Route::get(
 /*perawat */
 Route::get('/dashboardperawat', function () {
     return view('perawat.dashboardperawat');
-})->name('dashboardperawat');
+})->name('dashboardperawat')->name('ds');
 
 Route::get('/hasilpengkajianawal', function () {
     return view('perawat.hasilpengkajianawal');
@@ -130,7 +132,7 @@ Route::get('/pengkajianawal/delete/{id}','App\Http\Controllers\PengkajianAwalCon
 /*pekerja sosial */
 Route::get('/dashboardpekerjasosial', function () {
     return view('pekerjasosial.dashboardpekerjasosial');
-})->name('dashboardsosial');
+})->name('dashboardsosial')->name('ds');
 Route::get('/asi', function () {
     return view('pekerjasosial.asi');
 });
@@ -180,18 +182,15 @@ Route::get('/laporanperkembangan/delete/{id}','App\Http\Controllers\LaporanPerke
 /*admin */
 Route::get('/dashboardadmin', function () {
     return view('admin.dashboardadmin');
-})->name('dashboardadmin')->middleware('admin');
+})->name('dashboardadmin');
 
 Route::get('/buatakunpegawai', function () {
     return view('admin.buatakunpegawai');
 });
-Route::get('/daftarakunpegawai', function () {
-    return view('admin.daftarakunpegawai');
-});
-Route::get('/editakunpegawai', function () {
-    return view('admin.editakunpegawai');
-});
-
+Route::post('/buatakunpegawai/{id?}','App\Http\Controllers\UserController@store')->name('savebuatakunpegawai');
+Route::get('/daftarakunpegawai','App\Http\Controllers\UserController@index')->name('indexdaftarakunpegawai');
+Route::get('/editakunpegawai/{id}', 'App\Http\Controllers\UserController@show')->name('editakunpegawai');
+Route::get('/daftarakunpegawai/delete/{id}','App\Http\Controllers\UserController@delete')->name('deleteakunpegawai');
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

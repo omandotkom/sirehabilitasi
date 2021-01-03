@@ -37,7 +37,7 @@ class RiwayatPemerluLayananController extends Controller
         else
         $data = modelriwayat::findOrFail($id);
 
-        $data->nama = $request->nama;
+        $data->nama = 'UNDEFINED';
         $data->pemerlulayanan_id = $request->pemerlulayanan_id;
         $data->sd = $request->sd;
         $data->smp = $request->smp;

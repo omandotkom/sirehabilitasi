@@ -49,7 +49,7 @@
 												<div class="form-group row">
 													<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu </label>
 													<div class="col-sm-12 col-md-10">
-														<input class="form-control" type="text" name="pemerlulayanan_id" placeholder="Johnny Brown">
+														<input class="form-control" type="text" name="pemerlulayanan_id" placeholder="1">
 													</div>
 												</div>
 												<div class="form-group row">
@@ -149,7 +149,7 @@
 														<input class="btn btn-primary" type="submit" value="Simpan">
 													</div>
 													<div id="printButton" class="btn-list">
-														<input class="btn btn-primary" type="button" value="Cetak">
+														<input class="btn btn-primary" onclick="" type="button" value="Cetak">
 													</div>
 										</div>
 									</div>

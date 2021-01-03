@@ -46,9 +46,9 @@
 							$administrasi->suratperjanjian = base64_encode($administrasi->suratperjanjian);
 						@endphp
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu Layanan</label>
 							<div class="col-sm-12 col-md-10">
-							<input class="form-control" type="text" placeholder="" name="nama">
+							<input class="form-control" type="text" placeholder="" value="{{$administrasi->pemerlulayanan_id}}" name="pemerlulayanan_id">
 							</div>
 						</div>
 						<div class="form-group">
@@ -89,9 +89,7 @@
 						<div class="btn-list">
 							<input class="btn btn-primary" type="submit" value="Simpan">
 						</div>
-						<div class="btn-list">
-							<input class="btn btn-primary" type="submit" value="Cetak">
-						</div>
+					
 						
 
 						
