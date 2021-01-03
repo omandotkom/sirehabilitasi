@@ -93,7 +93,7 @@ Route::get(
 /*perawat */
 Route::get('/dashboardperawat', function () {
     return view('perawat.dashboardperawat');
-})->name('dashboardperawat')->name('ds');
+})->name('dashboardperawat');
 
 Route::get('/hasilpengkajianawal', function () {
     return view('perawat.hasilpengkajianawal');
@@ -132,7 +132,7 @@ Route::get('/pengkajianawal/delete/{id}','App\Http\Controllers\PengkajianAwalCon
 /*pekerja sosial */
 Route::get('/dashboardpekerjasosial', function () {
     return view('pekerjasosial.dashboardpekerjasosial');
-})->name('dashboardsosial')->name('ds');
+})->name('dashboardsosial');
 Route::get('/asi', function () {
     return view('pekerjasosial.asi');
 });
