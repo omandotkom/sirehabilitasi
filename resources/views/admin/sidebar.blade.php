@@ -49,7 +49,7 @@
     <ul class="submenu">
         <li><a href="/daftarakunpegawai">Daftar Akun Pegawai</a></li>
         <li><a href="/buatakunpegawai">Buat Akun Pegawai</a></li>
-
+        
     </ul>
 </li>
 @elseif(Auth::user()->role == "asesmen")
@@ -72,6 +72,7 @@
         <li><a href="{{ url('/tablepemerlupelayanan') }}">Data Pemerlu Pelayanan</a></li>
         <li><a href="{{ url('/tableriwayat') }}">Riwayat Pemerlu Pelayanan</a></li>
         <li><a href="{{ url('/tableadministrasi') }}">Administrasi</a></li>
+        <li><a href="/tablepemerlupelayanan">Data Pemerlu Pelayanan</a></li>
     </ul>
 </li>
 @elseif(Auth::user()->role == "perawat")
@@ -92,7 +93,7 @@
     <ul class="submenu">
         <li><a href="{{ url('/tablehasilpengkajianawal') }}">Data Hasil Pengkajian Awal</a></li>
         <li><a href="{{ url('/tablecatatanperkembangan') }}">Data Catatan Perkembangan</a></li>
-
+        <li><a href="/tablepemerlupelayanan">Data Pemerlu Pelayanan</a></li>
     </ul>
 </li>
 @elseif(Auth::user()->role == "psikolog")
@@ -112,7 +113,7 @@
     </a>
     <ul class="submenu">
         <li><a href="{{ url('/tablehasilasesmen') }}">Hasil Asesmen</a></li>
-
+        <li><a href="/tablepemerlupelayanan">Data Pemerlu Pelayanan</a></li>
 
     </ul>
 </li>
