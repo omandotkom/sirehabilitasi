@@ -25,7 +25,7 @@ class CatatanPerkembanganController extends Controller
         $c->masalahkesehatan = $request->masalahkesehatan;
         $c->rekomendasi = $request->rekomendasi;
         $c->rujukan = $request->rujukan;
-
+        $c->nama = $request->nama;
         $c->save();
         if ($edit){
             return redirect()->route('indexcatatanperkembangan');
@@ -49,5 +49,9 @@ class CatatanPerkembanganController extends Controller
         return view('perawat.edit-catatanperkembangan1',[
             'catatan' =>$p
         ]);
+    }
+    public function delete($id){
+        AppCatatanPerkembangan::where('pemerlulayanan_id',$id)->delete();
+        return back();
     }
 }

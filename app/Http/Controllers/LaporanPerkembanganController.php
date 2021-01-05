@@ -13,6 +13,7 @@ class LaporanPerkembanganController extends Controller
         else
             $lap = LaporanPerkembangan::findOrFail($id);
             
+            $lap->nama = $request->nama;
             $lap->bulanlaporan = $request->bulanlaporan;
             $lap->pemerlulayanan_id = $request->pemerlulayanan_id;
             $lap->tanggalmasuk = date('Y-m-d', strtotime($request->tanggalmasuk));

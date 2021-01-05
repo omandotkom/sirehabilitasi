@@ -44,6 +44,13 @@
 								<input class="form-control" value="{{$catatan->pemerlulayanan_id}}" name="pemerlulayanan_id" type="text" placeholder="1">
 							</div>
 						</div>
+
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" name="nama" value="{{$catatan->nama}}" type="text">
+							</div>
+						</div>
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Bulan Ke</label>
 							<div class="col-sm-12 col-md-10">

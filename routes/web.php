@@ -102,6 +102,7 @@ Route::post('/hasilpengkajianawal/save/{id?}','App\Http\Controllers\PengkajianAw
 Route::get('/catatanperkembangan', function () {
     return view('perawat.catatanperkembangan');
 });
+Route::get('/catatanperkembangan/delete/{id}','App\Http\Controllers\CatatanPerkembanganController@delete')->name('deletecatatanperkembangan');
 Route::post('/catatanperkembangan/save/{id?}','App\Http\Controllers\CatatanPerkembanganController@store')->name('savecatatanperkembangan');
 Route::get('/tablehasilpengkajianawal', 
 'App\Http\Controllers\PengkajianAwalController@index'

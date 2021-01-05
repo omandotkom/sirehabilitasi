@@ -53,6 +53,12 @@
 													</div>
 												</div>
 												<div class="form-group row">
+													<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+													<div class="col-sm-12 col-md-10">
+														<input class="form-control" type="text" value="{{$assist->nama}}" name="nama" placeholder="1">
+													</div>
+												</div>
+												<div class="form-group row">
 													<label class="col-sm-12 col-md-2 col-form-label">Tanggal Pemeriksaan</label>
 													<div class="col-sm-12 col-md-10">
 														<input class="form-control date-picker" value="{{$assist->tanggalpemeriksaan}}" name="tanggalpemeriksaan" placeholder="Select Date" type="text">

@@ -26,6 +26,7 @@ class PengkajianAwalController extends Controller
         $p->riwayatpenyakit = $request->riwayatpenyakit;
         $p->tanggalteslab = date('Y-m-d', strtotime($request->tanggalteslab));
         $p->hiv = $request->hiv;
+        $p->nama = $request->nama;
         $p->darahrutin = $request->darahrutin;
 
         $p->save();

@@ -19,7 +19,8 @@ class AsiController extends Controller
             $asi = new Asi();
         else 
             $asi = Asi::findOrFail($id);
-
+        
+        $asi->nama = $request->nama;
         $asi->pemerlulayanan_id = $request->pemerlulayanan_id;
         $asi->tanggalmasuk = date('Y-m-d', strtotime($request->tanggalmasuk));
         $asi->medis = json_encode($request->medis);

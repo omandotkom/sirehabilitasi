@@ -19,63 +19,69 @@
 					</div>
 				</div>
 			</div>
-		<div id="printArea">
-			<div class="pd-20 card-box mb-30">
-				<div class="clearfix">
-					<div class="pull-left">
-						<h4 class="text-blue h4">Riwayat Pemerlu Pelayanan</h4>
-					</div>
-				</div>
+			<div id="printArea">
 				<div class="pd-20 card-box mb-30">
 					<div class="clearfix">
-
-
-					</div>
-					<form action="{{route('saveriwayatpemerlulayanan',$riwayat->id)}}" method="post">
-						@csrf
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu Layanan</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" placeholder="" name="pemerlulayanan_id" value="{{$riwayat->pemerlulayanan_id}}" type="text">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">SD</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="{{$riwayat->sd}}" placeholder="SD" name="sd" type="text">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">SMP</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="{{$riwayat->smp}}" placeholder="SMP" name="smp" type="text">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">SMA</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="{{$riwayat->sma}}" placeholder="SMA" name="sma" type="sma">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Kuliah</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" placeholder="Kuliah" value="{{$riwayat->kuliah}}" name="kuliah" type="kuliah">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Pendidikan Non Formal</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" value="{{$riwayat->pendidikannonformal}}" placeholder="Kursus/Organisasi/Prestasi" name="pendidikannonformal" type="text">
-							</div>
+						<div class="pull-left">
+							<h4 class="text-blue h4">Riwayat Pemerlu Pelayanan</h4>
 						</div>
 					</div>
-						<div id="submitButton" class="btn-list">
-							<input  class="btn btn-primary" type="submit" value="Simpan">
+					<div class="pd-20 card-box mb-30">
+						<div class="clearfix">
+
+
 						</div>
-						<div id="printButton" class="btn-list">
-							<input  class="btn btn-primary" onclick="printDiv('printArea');" type="button" value="Cetak">
-						</div>
+						<form action="{{route('saveriwayatpemerlulayanan',$riwayat->id)}}" method="post">
+							@csrf
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Kode Pemerlu Layanan</label>
+								<div class="col-sm-12 col-md-10">
+									<input class="form-control" placeholder="" name="pemerlulayanan_id" value="{{$riwayat->pemerlulayanan_id}}" type="text">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+								<div class="col-sm-12 col-md-10">
+									<input class="form-control" value="{{$riwayat->nama}}" placeholder="Agus" name="nama" type="text">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">SD</label>
+								<div class="col-sm-12 col-md-10">
+									<input class="form-control" value="{{$riwayat->sd}}" placeholder="SD" name="sd" type="text">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">SMP</label>
+								<div class="col-sm-12 col-md-10">
+									<input class="form-control" value="{{$riwayat->smp}}" placeholder="SMP" name="smp" type="text">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">SMA</label>
+								<div class="col-sm-12 col-md-10">
+									<input class="form-control" value="{{$riwayat->sma}}" placeholder="SMA" name="sma" type="sma">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Kuliah</label>
+								<div class="col-sm-12 col-md-10">
+									<input class="form-control" placeholder="Kuliah" value="{{$riwayat->kuliah}}" name="kuliah" type="kuliah">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Pendidikan Non Formal</label>
+								<div class="col-sm-12 col-md-10">
+									<input class="form-control" value="{{$riwayat->pendidikannonformal}}" placeholder="Kursus/Organisasi/Prestasi" name="pendidikannonformal" type="text">
+								</div>
+							</div>
+					</div>
+					<div id="submitButton" class="btn-list">
+						<input class="btn btn-primary" type="submit" value="Simpan">
+					</div>
+					<div id="printButton" class="btn-list">
+						<input class="btn btn-primary" onclick="printDiv('printArea');" type="button" value="Cetak">
+					</div>
 
 
 				</div>

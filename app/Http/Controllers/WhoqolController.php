@@ -22,7 +22,7 @@ class WhoqolController extends Controller
         else
             $w = Whoqol::findOrFail($id);
 
-
+            $w->nama = $request->nama;
             $w->pemerlulayanan_id = $request->pemerlulayanan_id;
             $w->tanggalwawancara = date('Y-m-d', strtotime($request->tanggalwawancara));
             $domain1 = new stdClass();

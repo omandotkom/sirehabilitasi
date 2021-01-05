@@ -17,6 +17,7 @@ class AssistController extends Controller
             $as = Assist::findOrFail($id);
         }
 
+        $as->nama = $request->nama;
         $as->pemerlulayanan_id = $request->pemerlulayanan_id;
         $as->tanggalpemeriksaan = date('Y-m-d', strtotime($request->tanggalpemeriksaan));
         $as->a = $request->a;

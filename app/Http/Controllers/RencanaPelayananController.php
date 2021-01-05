@@ -16,6 +16,7 @@ class RencanaPelayananController extends Controller
             $ren = RencanaPelayanan::findOrFail($id);
 
 
+        $ren->nama = $request->nama;
         $ren->pemerlulayanan_id = $request->pemerlulayanan_id;
         $ren->tanggalmasuk = date('Y-m-d', strtotime($request->tanggalmasuk));
         $ren->tanggalprogram = date('Y-m-d', strtotime($request->tanggalprogram));

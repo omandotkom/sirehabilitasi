@@ -52,6 +52,12 @@
 						</div>
 					</div>
 					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+						<div class="col-sm-12 col-md-10">
+							<input class="form-control" name="nama" type="text" >
+						</div>
+					</div>
+					<div class="form-group row">
 						<label class="col-sm-12 col-md-2 col-form-label">Tanggal masuk panti</label>
 						<div class="col-sm-12 col-md-10">
 							<input class="form-control date-picker" name="tanggalmasuk" placeholder="Select Date" type="text">

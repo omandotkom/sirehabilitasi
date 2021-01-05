@@ -49,6 +49,12 @@
 													</div>
 												</div>
 												<div class="form-group row">
+													<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+													<div class="col-sm-12 col-md-10">
+														<input class="form-control" value="{{$whoqol->nama}}" name="nama" type="text" placeholder="1">
+													</div>
+												</div>
+												<div class="form-group row">
 													<label class="col-sm-12 col-md-2 col-form-label">Tanggal Wawancara</label>
 													<div class="col-sm-12 col-md-10">
 														<input class="form-control date-picker" value="{{$whoqol->tanggalwawancara}}" name="tanggalwawancara" placeholder="Select Date" type="text">

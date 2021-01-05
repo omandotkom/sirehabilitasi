@@ -49,6 +49,12 @@
 												</div>
 											</div>
 											<div class="form-group row">
+												<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
+												<div class="col-sm-12 col-md-10">
+													<input class="form-control" value="{{$asi->nama}}" name="nama" type="text" placeholder="1">
+												</div>
+											</div>
+											<div class="form-group row">
 												<label class="col-sm-12 col-md-2 col-form-label">Tanggal Masuk</label>
 												<div class="col-sm-12 col-md-10">
 													<input class="form-control date-picker" name="tanggalmasuk" value="{{$asi->tanggalmasuk}}" placeholder="Select Date" type="text">

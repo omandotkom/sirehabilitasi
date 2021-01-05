@@ -84,6 +84,7 @@ class AsesmenPsikologController extends Controller
         $ps->rumusanmasalah = $request->rumusanmasalah;
         $ps->kesimpulan = $request->kesimpulan;
         $ps->rencanaintervensi = $request->rencanaintervensi;
+        $ps->nama = $request->nama;
         $ps->save();
         return redirect()->route('indexhasilasesmen');
     }
