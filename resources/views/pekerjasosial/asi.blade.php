@@ -60,7 +60,9 @@
 													<input class="form-control date-picker" name="tanggalmasuk" placeholder="Select Date" type="text">
 												</div>
 											</div>
-
+											<div class="">
+													<h12>Petunjuk pengisian : centang kolom berikut sesuai dengan nilai yang diperoleh</h12>
+												</div>
 											<div class="form-group row">
 
 												<table class="table table-bordered">

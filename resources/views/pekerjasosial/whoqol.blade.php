@@ -60,6 +60,7 @@
 																<input class="form-control date-picker" name="tanggalwawancara" placeholder="Select Date" type="text">
 															</div>
 														</div>
+														<h10>Lengkapi tabel berikut berdasarkan hasil nilai yang diperoleh</h10>
 													<div class="form-group row">
 												
 														<table class="table table-bordered">

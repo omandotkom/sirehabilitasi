@@ -55,7 +55,7 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
+						
 						
 						<form action="{{route('logout')}}" method="post">
 							@csrf
@@ -64,9 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="vendors/images/github.svg" alt=""></a>
-			</div>
+			
 		</div>
 	</div>
 
@@ -148,8 +146,8 @@
 	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="index.html">
-				<img src="vendors/images/deskapp-logo-kemensos.png" >
-				<img src="vendors/images/deskapp-logo-kemensos2.png">
+				<img src="vendors/images/logo-kemensos.png" >
+				
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>

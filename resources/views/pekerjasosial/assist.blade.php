@@ -55,7 +55,7 @@
 												<div class="form-group row">
 													<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
 													<div class="col-sm-12 col-md-10">
-														<input class="form-control" type="text" name="nama" placeholder="1">
+														<input class="form-control" type="text" name="nama" placeholder="">
 													</div>
 												</div>
 												<div class="form-group row">
@@ -66,7 +66,11 @@
 												</div>
 
 												<body>
-													<h8> Skor Penggunaan Zat</h8>
+													<h8> Skor Penggunaan Zat : 
+													
+													Skor 0-30 Rendah,
+													Skor 4-26 Sedang,
+													Skor 27+ Tinggi</h8>
 
 													<table class="table table-bordered table-striped">
 														<thead>
@@ -154,9 +158,7 @@
 													<div id="submitButton" class="btn-list">
 														<input class="btn btn-primary" type="submit" value="Simpan">
 													</div>
-													<div id="printButton" class="btn-list">
-														<input class="btn btn-primary" onclick="" type="button" value="Cetak">
-													</div>
+													
 										</div>
 									</div>
 								</div>
