@@ -50,14 +50,17 @@ class LaporanPerkembanganController extends Controller
     }
     public function index(){
         $pemerlu = DB::table('tabelpemerlupelayanan')
-        ->select('tabelpemerlupelayanan.id','tabelpemerlupelayanan.nama')->get();
+        ->select('tabelpemerlupelayanan.id','tabelpemerlupelayanan.nama')
+        ->join('tabellaporanperkembangan','tabelpemerlupelayanan.id','=','tabellaporanperkembangan.pemerlulayanan_id')->get();
        
         return view('pekerjasosial.tablelaporanperkembangan',[
             'pemerlu' => $pemerlu
         ]);
     }
     public function delete($id){
-        $p = LaporanPerkembangan::where('pemerlulayanan_id',$id)->delete();
+        $p = LaporanPerkembangan::where('pemerlulayanan_id',$id);
+        $p->delete();
+        
         return back();
     }
 }

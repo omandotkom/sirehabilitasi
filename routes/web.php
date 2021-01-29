@@ -49,15 +49,15 @@ Route::get(
 Route::post('/riwayatpemerlulayanan/save/{id?}', 'App\Http\Controllers\RiwayatPemerluLayananController@store')->name('saveriwayatpemerlulayanan');
 
 Route::get('/tablepemerlupelayanan','App\Http\Controllers\PemerluPelayananController@index')->name('indexpemerlulayanan');
-Route::get('/tablepemerlupelayanan/delete/{id}','App\Http\Controllers\RiwayatPemerluLayananController@delete')->name('deleteriwayatpemerlulayanan');
+Route::get('/tableriwayatpemerlupelayanan/delete/{id}','App\Http\Controllers\RiwayatPemerluLayananController@delete')->name('deleteriwayatpemerlulayanan');
 Route::post(
     '/tablepemerlupelayanan/save/{id?}',
     'App\Http\Controllers\PemerluPelayananController@store'
 )->name('savepemerlupelayanan');
-Route::post(
+Route::get(
     '/tablepemerlupelayanan/delete/{id}',
     'App\Http\Controllers\PemerluPelayananController@delete'
-)->name('deletepemerlupelayanan');
+)->name('deletepemerlupelayanan2');
 
 Route::get('/tableriwayat','App\Http\Controllers\RiwayatPemerluLayananController@index')->name('indexriwayatpemerlulayanan');
 Route::get(

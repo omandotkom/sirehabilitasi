@@ -54,6 +54,7 @@ class PemerluPelayananController extends Controller
         ]);
     }
     public function delete($id){
+        Log::debug("fuck");
         $pemerlu = modelpemerlupelayanan::findOrFail($id);
         $pemerlu->delete();
         return back();
