@@ -145,9 +145,8 @@
 
 	<div class="left-side-bar">
 		<div class="brand-logo">
-			<a href="index.html">
-				<img src="vendors/images/logo-kemensos.png" >
-				
+			<a href="{{route('index')}}">
+				<img src="{{url('/vendors/images/logo-kemensos.png')}}">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
