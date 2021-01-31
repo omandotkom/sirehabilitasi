@@ -50,8 +50,12 @@ class LaporanPerkembanganController extends Controller
     }
     public function index(){
         $pemerlu = DB::table('tabelpemerlupelayanan')
-        ->select('tabelpemerlupelayanan.id','tabelpemerlupelayanan.nama')->get();
-       
+        ->whereIn('id', function ($query) {
+            $query->select('pemerlulayanan_id')
+                  ->from('tabellaporanperkembangan')
+                  
+                  ->distinct();
+        })->get();
         return view('pekerjasosial.tablelaporanperkembangan',[
             'pemerlu' => $pemerlu
         ]);

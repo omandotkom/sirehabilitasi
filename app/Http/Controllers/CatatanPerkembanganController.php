@@ -35,7 +35,13 @@ class CatatanPerkembanganController extends Controller
     public function index(){
         // $pemerlu = DB::table('tabelpemerlupelayanan')->join('tabelcatatanperkembangan','tabelpemerlupelayanan.id','=','tabelcatatanperkembangan.pemerlulayanan_id')
         // ->select('tabelpemerlupelayanan.id','tabelpemerlupelayanan.nama','tabelcatatanperkembangan.id as idcatatanperkembangan')->get();
-        $pemerlu = modelpemerlupelayanan::all();
+        $pemerlu = DB::table('tabelpemerlupelayanan')
+        ->whereIn('id', function ($query) {
+            $query->select('pemerlulayanan_id')
+                  ->from('tabelcatatanperkembangan')
+                  
+                  ->distinct();
+        })->get();
         
         return view('perawat.tablecatatanperkembangan',[
             'pemerlu' => $pemerlu
