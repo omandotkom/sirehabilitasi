@@ -42,7 +42,7 @@
 							$administrasi->ktportu = base64_encode($administrasi->ktportu);
 							$administrasi->suratpemohonanortu = base64_encode($administrasi->suratpemohonanortu);
 							$administrasi->suratpernyataanortu = base64_encode($administrasi->suratpernyataanortu);
-							$administrasi->suratpemerlupelayanan = base64_encode($administrasi->suratpemerlupelayanan);
+							$administrasi->suratpernyataanpemerlu = base64_encode($administrasi->suratpernyataanpemerlu);
 							$administrasi->suratperjanjian = base64_encode($administrasi->suratperjanjian);
 						@endphp
 						<div class="form-group row">
@@ -79,7 +79,7 @@
 						<div class="form-group">
 							<label>Surat Pernyataan Pemerlu Pelayanan Kesejahteraan Sosial</label>
 							<input type="file" class="form-control-file form-control height-auto" name="suratpemerlupelayanan">
-							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->suratpemerlupelayanan)}}">Unduh</a>
+							<a target="_blank" class="badge badge-primary mt-2" href="{{route('downloadadministrasi',$administrasi->suratpernyataanpemerlu)}}">Unduh</a>
 						</div>
 						<div class="form-group">
 							<label>Surat Perjanjian</label>
@@ -89,9 +89,6 @@
 						<div class="btn-list">
 							<input class="btn btn-primary" type="submit" value="Simpan">
 						</div>
-					
-						
-
 						
 					</div>
 				</div>
